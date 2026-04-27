@@ -29,7 +29,7 @@ To encrypt your first file using ZanyonLocker™, you're gonna follow these step
 _Note: These are mimimum requirements, meaning, for example it says at least Windows 10, 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all Requirements, then ZanyonLocker™ will run perfectly. More Space = Faster Encryption._
 
 **How To Check Your PC Info To See Whether ZanyonLocker™ Can Run On It**
-First, press **Windows Key + R** on your keyboard. Then, type **msinfo32.** This will give you all the specs of your PC.
+First, press **Windows Key + R** on your keyboard. Then, type **msinfo32** and press **enter.** This will give you all the specs of your PC.
 <img width="399" height="206" alt="image" src="https://github.com/user-attachments/assets/662a027b-b829-4e77-b7e5-64808968e15c" />
 
 
@@ -45,7 +45,7 @@ Version: v1.3.0
 
 <img width="619" height="139" alt="image" src="https://github.com/user-attachments/assets/077eb4a7-133a-4d5b-8a63-8002e080d497" />
 
-Project Created By: Raiden Corp
+_Project Created By:_ Raiden Corp
 
 
 **© Raiden Corporation 2026.**
