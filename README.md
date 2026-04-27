@@ -32,6 +32,7 @@ _Note: These are mimimum requirements, meaning, for example it says at least Win
 First, press **Windows Key + R** on your keyboard. Then, type **msinfo32** and press **enter.** This will give you all the specs of your PC.
 <img width="399" height="206" alt="image" src="https://github.com/user-attachments/assets/662a027b-b829-4e77-b7e5-64808968e15c" />
 
+<img width="715" height="729" alt="IMG_20260427_124730_874 (1)" src="https://github.com/user-attachments/assets/a83bb39e-6860-493b-91c1-cfda588d07fd" />
 
 
 
