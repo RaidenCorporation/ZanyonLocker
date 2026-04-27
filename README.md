@@ -36,7 +36,9 @@ ZanyonLocker™ will not be used for **unethical reasons**, such as hacking. Use
 
 ℹ **Info:**
 
-Version: v1.2
+Version: v1.3.0
+
+<img width="619" height="139" alt="image" src="https://github.com/user-attachments/assets/077eb4a7-133a-4d5b-8a63-8002e080d497" />
 
 Project Created By: Raiden Corp
 
