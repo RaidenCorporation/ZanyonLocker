@@ -1,19 +1,19 @@
 _ZanyonLocker™ is a safe encryption tool made by Raiden Corporation. It is used to encrypt files over a secure process._
 
-🔐 **Security**
+## 🔐 **Security**
 
 ZanyonLocker™ uses AES (Advanced Encryption Standard) to securely encrypt your data for privacy.
 
-🔰 **How To Use ZanyonLocker™**
+## 🔰 **How To Use ZanyonLocker™**
 
 To encrypt your first file using ZanyonLocker™, you're gonna follow these steps in order. So you first have to open the ZanyonLocker.exe application. Then, a window will pop up. There are three buttons, three steps. You want to first press the first button which is Setup a Master Key. Then a small window will pop up. Enter a password only YOU know. Afterwards, you want to press the second button. Also you cannot do the second button only after you made a password. So you're gonna press Lock a file. This is going to ask you for your password that you made. Type it in. Then a File Explorer window will pop up. You can pick any file/folder you want to encrypt, select it, and it will be encrypted. To see if it works, if you check the file in File Explorer the file should end in .zanyon (e.g; secret.txt » secret.txt.zanyon). If you ever want to decrypt a file, open ZanyonLocker™ and press the Unlock a file button. It will ask you for your password again, then a File Explorer window  will pop up, and you can pick the file you want to decrypt (e.g; secret.txt.zanyon » secret.txt).
 
 
-💡 **Pro Tip:** ZanyonLocker™ keeps the original file for safety. To ensure total privacy, **manually delete the original file** _after_ you see the .zanyon version created.
+### 💡 **Pro Tip:** ZanyonLocker™ keeps the original file for safety. To ensure total privacy, **manually delete the original file** _after_ you see the .zanyon version created.
 
 
 
-💻 **Minimum System Requirements**
+## 💻 **Minimum System Requirements**
 
 • Operating System - Windows 10/11, 22H2 
 
@@ -34,11 +34,20 @@ First, press **Windows Key + R** on your keyboard. Then, type **msinfo32** and p
 
 <img width="195" height="204" alt="Win" src="https://github.com/user-attachments/assets/dbfa382c-f497-4b98-bcc3-c397ff5619ae" /><img width="105" height="101" alt="R" src="https://github.com/user-attachments/assets/bf7ae126-9c07-4b74-a9aa-765f33d45e7c" />
 
+## 🔰 Verification & Safety
+
+
+ZanyonLocker™ is a legitimate privacy utility developed by Raiden Corporation.
+
+**Not Malware:** This tool is strictly for personal file encryption and is **NOT** related to ransomware like *SynoLocker* or any other malicious software.
+
+**Official Source:** The only official and safe versions are hosted here on the **RaidenCorporation GitHub** and **YouTube** which is **Raiden Corporation.**
+
+**Developer:** Created by Raiden Bisnath (South Africa).
 
 
 
-
-⚠️ **Disclaimer**
+## ⚠️ **Disclaimer**
 
 ZanyonLocker™ will not be used for **unethical reasons**, such as hacking. Use ZanyonLocker™ _only_ for **ethical** reasons.
 
