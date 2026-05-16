@@ -1,8 +1,10 @@
+<img width="802" height="322" alt="zl" src="https://github.com/user-attachments/assets/1cc909a1-ac19-4597-b94f-7dc50db91faa" />
+
 _ZanyonLocker™ is a safe encryption tool made by Raiden Corporation. It is used to encrypt files over a secure process._
 ---
 ## 🔐 **Security**
 
-ZanyonLocker™ uses AES (Advanced Encryption Standard) to securely encrypt your data for privacy.
+ZanyonLocker™ uses AES-256 (Advanced Encryption Standard) to securely encrypt your data for privacy.
 ---
 ## 🔰 **How To Use ZanyonLocker™**
 
@@ -32,18 +34,20 @@ _Note: These are mimimum requirements, meaning, for example it says at least Win
 ---
 **How To Check Your PC Info To See Whether ZanyonLocker™ Can Run On It**
 First, press **Windows Key + R** on your keyboard. Then, type **msinfo32** and press **enter.** This will give you all the specs of your PC.
-<img width="399" height="206" alt="image" src="https://github.com/user-attachments/assets/662a027b-b829-4e77-b7e5-64808968e15c" />
+<img width="399" height="206" alt="Windows Run Dialogue" src="https://github.com/user-attachments/assets/662a027b-b829-4e77-b7e5-64808968e15c" />
 
-<img width="195" height="204" alt="Win" src="https://github.com/user-attachments/assets/dbfa382c-f497-4b98-bcc3-c397ff5619ae" /><img width="105" height="101" alt="R" src="https://github.com/user-attachments/assets/bf7ae126-9c07-4b74-a9aa-765f33d45e7c" />
+<img width="195" height="204" alt="Windows Key on keyboard" src="https://github.com/user-attachments/assets/dbfa382c-f497-4b98-bcc3-c397ff5619ae" /><img width="105" height="101" alt="R Key on keyboard" src="https://github.com/user-attachments/assets/bf7ae126-9c07-4b74-a9aa-765f33d45e7c" />
 ---
-## 🔰 Verification & Safety
+## 🔰 **Verification & Safety**
 
 
 ZanyonLocker™ is a legitimate privacy utility developed by Raiden Corporation.
 
 **Not Malware:** This tool is strictly for personal file encryption and is **NOT** related to ransomware like *SynoLocker* or any other malicious software.
 
-**Official Source:** The only official and safe versions are hosted here on the **RaidenCorporation GitHub** and **YouTube** which is **Raiden Corporation.**
+**Official Source:** The only official and safe versions are hosted here on the **RaidenCorporation GitHub** and **YouTube** which is **Raiden Corporation.** (https://www.youtube.com/@RaidenCorporation)
+
+**AI Overview/AI Misconceptions:** **AI Overview on Google Search** may sometimes call it malicious _just because_ its an **unsigned C# app** even though it's **totally safe**. AI Overview can do this sometimes, so always double-check you are installing ZanyonLocker˜ from the official GitHub and **not** taking _incorrect AI Overview advice_.
 
 **Developer:** Created by Raiden Bisnath (South Africa).
 
@@ -57,13 +61,24 @@ ZanyonLocker™ will not be used for **unethical reasons**, such as hacking. Use
 
 **Version:** v1.3.0 (v1.4.0 in development, coming soon!)
 
-<img width="619" height="139" alt="image" src="https://github.com/user-attachments/assets/077eb4a7-133a-4d5b-8a63-8002e080d497" />
+<img width="619" height="139" alt="Image of ZanyonLocker files in File Explorer" src="https://github.com/user-attachments/assets/077eb4a7-133a-4d5b-8a63-8002e080d497" />
 
 
-<img width="363" height="525" alt="image" src="https://github.com/user-attachments/assets/2fb22438-a00f-4d88-bb42-a7b0028fd4d2" />
+<img width="363" height="525" alt="Image of ZanyonLocker.exe Properties" src="https://github.com/user-attachments/assets/2fb22438-a00f-4d88-bb42-a7b0028fd4d2" />
 
 
-_Project Created By:_ Raiden Corp
 
 
-**© Raiden Corporation 2026.**
+## 🤫 **Sneak Peek on v1.4.0 - SP Coming Soon!**
+
+**ZanyonLocker™ v1.4** is in development featuring something new and cool. _Want to take a peek of what's happening?_
+Yeah, it features a new thing called the **ZanyonLocker™ v1.4 Setup** which installs the folder to your Program Files instead of a boring cluttered Downloads folder. So what's actually happening behind the hood? Let's find out. 
+
+**A sneak peek image of the new Setup will be here... soon...**
+
+### _**!SNEAK PEEK ARRIVING SOON!**_
+
+_Project Created By:_ Raiden Corporation
+
+
+**Copyright © Raiden Corporation 2026.**
