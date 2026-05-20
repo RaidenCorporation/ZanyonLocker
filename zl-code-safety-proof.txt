@@ -1,0 +1,275 @@
+using System;
+using System.IO;
+using System.Text;
+using System.Security.Cryptography;
+using System.Security.Principal;
+using System.Diagnostics;
+using System.Windows.Forms;
+using System.Drawing;
+using Microsoft.Win32;
+using System.Runtime.InteropServices;
+using System.Reflection;
+
+[assembly: AssemblyTitle("ZanyonLocker™")]
+[assembly: AssemblyDescription("ZanyonLocker™ Encryption Utility")]
+[assembly: AssemblyCompany("Raiden Corporation")]
+[assembly: AssemblyProduct("ZanyonLocker™")]
+[assembly: AssemblyCopyright("Copyright © Raiden Corp 2026")]
+[assembly: AssemblyVersion("1.3.0.0")]
+[assembly: AssemblyFileVersion("1.3.0.0")]
+
+namespace ZanyonLocker
+
+{
+    static class Program
+    {
+        public static bool IsAdmin() {
+            try { return new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator); }
+            catch { return false; }
+        }
+
+        [STAThread]
+        static void Main(string[] args) {
+            if (!IsAdmin()) {
+                ProcessStartInfo proc = new ProcessStartInfo();
+                proc.UseShellExecute = true;
+                proc.FileName = Application.ExecutablePath;
+                proc.Arguments = string.Join(" ", args);
+                proc.Verb = "runas";
+                try { Process.Start(proc); } catch { }
+                return;
+            }
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            string file = args.Length > 0 ? args[0] : null;
+            Application.Run(new ZanyonApp(file));
+        }
+    }
+
+    // --- FERNET IMPLEMENTATION (Matches Python) ---
+    public class Fernet {
+        private byte[] _sigKey; private byte[] _encKey;
+        public Fernet(byte[] key) {
+            _sigKey = new byte[16]; _encKey = new byte[16];
+            Buffer.BlockCopy(key, 0, _sigKey, 0, 16);
+            Buffer.BlockCopy(key, 16, _encKey, 0, 16);
+        }
+        public byte[] Encrypt(byte[] data) {
+            using (Aes aes = Aes.Create()) {
+                aes.Key = _encKey; aes.Mode = CipherMode.CBC; aes.Padding = PaddingMode.PKCS7;
+                aes.GenerateIV();
+                using (ICryptoTransform enc = aes.CreateEncryptor()) {
+                    byte[] cipher = enc.TransformFinalBlock(data, 0, data.Length);
+                    byte[] pkg = new byte[1 + 8 + 16 + cipher.Length];
+                    pkg[0] = 0x80; // Version
+                    Buffer.BlockCopy(aes.IV, 0, pkg, 9, 16);
+                    Buffer.BlockCopy(cipher, 0, pkg, 25, cipher.Length);
+                    using (HMACSHA256 hmac = new HMACSHA256(_sigKey)) {
+                        byte[] hash = hmac.ComputeHash(pkg);
+                        byte[] result = new byte[pkg.Length + 32];
+                        Buffer.BlockCopy(pkg, 0, result, 0, pkg.Length);
+                        Buffer.BlockCopy(hash, 0, result, pkg.Length, 32);
+                        return result;
+                    }
+                }
+            }
+        }
+        public byte[] Decrypt(byte[] data) {
+            byte[] iv = new byte[16]; Buffer.BlockCopy(data, 9, iv, 0, 16);
+            int cLen = data.Length - 57;
+            byte[] cipher = new byte[cLen]; Buffer.BlockCopy(data, 25, cipher, 0, cLen);
+            using (Aes aes = Aes.Create()) {
+                aes.Key = _encKey; aes.IV = iv; aes.Mode = CipherMode.CBC;
+                using (ICryptoTransform dec = aes.CreateDecryptor()) {
+                    return dec.TransformFinalBlock(cipher, 0, cipher.Length);
+                }
+            }
+        }
+    }
+
+
+    public class ZanyonApp : Form {
+[DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+private static extern IntPtr CreateRoundRectRgn(int nLeft, int nTop, int nRight, int nBottom, int nWidth, int nHeight);
+        private string appPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "ZanyonLocker");
+        private string hashFile, saltFile;
+        private Label status;
+
+        public ZanyonApp(string targetFile) {
+            hashFile = Path.Combine(appPath, "z_hash.bin");
+            saltFile = Path.Combine(appPath, "z_salt.bin");
+            if (!Directory.Exists(appPath)) Directory.CreateDirectory(appPath);
+
+            InitUI();
+this.MaximizeBox = false;
+this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            RegisterMenu();
+
+            if (!string.IsNullOrEmpty(targetFile) && targetFile.EndsWith(".zanyon")) {
+                Timer t = new Timer(); t.Interval = 1000;
+                t.Tick += (s, e) => { t.Stop(); UnlockFile(targetFile); };
+                t.Start();
+            }
+        }
+
+        private void InitUI() {
+            this.Text = "ZanyonLocker";
+            this.Size = new Size(400, 500);
+            this.BackColor = Color.FromArgb(30, 30, 30);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+
+            Label title = new Label() { 
+                Text = "ZanyonLocker™", Font = new Font("Impact", 35), ForeColor = Color.White, 
+                TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.Top, Height = 100 
+            };
+
+            Button btnTheme = new Button() { 
+                Text = "🌓", Size = new Size(40, 30), 
+                Location = new Point(335, 10), FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.White, BackColor = Color.Transparent
+            };
+            btnTheme.FlatAppearance.BorderSize = 0;
+            btnTheme.Click += (s, e) => ToggleTheme();
+
+            Button btnSetup = CreateBtn("1. Setup Master Password", Color.FromArgb(31, 116, 190), 120);
+            btnSetup.Click += (s, e) => Setup();
+
+            Button btnLock = CreateBtn("2. Lock a File", Color.FromArgb(196, 30, 45), 180);
+            btnLock.Click += (s, e) => LockFile();
+
+            Button btnUnlock = CreateBtn("3. Unlock a File", Color.FromArgb(45, 165, 70), 240);
+            btnUnlock.Click += (s, e) => UnlockFile(null);
+
+            status = new Label() { 
+                Text = "System Ready", ForeColor = Color.Cyan, 
+                TextAlign = ContentAlignment.MiddleCenter, 
+                Dock = DockStyle.Bottom, Height = 50 
+            };
+
+            this.Controls.Add(btnTheme);
+            this.Controls.Add(btnUnlock);
+            this.Controls.Add(btnLock);
+            this.Controls.Add(btnSetup);
+            this.Controls.Add(title);
+            this.Controls.Add(status);
+
+        }
+
+        private bool isDarkMode = true;
+        private void ToggleTheme() {
+            isDarkMode = !isDarkMode;
+            this.BackColor = isDarkMode ? Color.FromArgb(30, 30, 30) : Color.WhiteSmoke;
+            status.ForeColor = isDarkMode ? Color.Cyan : Color.DarkBlue;
+
+            foreach (Control c in this.Controls) {
+                if (c is Button && c.Text != "🌓") {
+                    c.ForeColor = Color.White; 
+                } else if (c is Label && c != status) {
+                    c.ForeColor = isDarkMode ? Color.White : Color.Black;
+                } else if (c.Text == "🌓") {
+                    c.ForeColor = isDarkMode ? Color.White : Color.Black;
+                }
+            }
+        }
+
+private Button CreateBtn(string txt, Color c, int y) {
+    Button b = new Button();
+    b.Text = txt;
+    b.BackColor = c;
+    b.ForeColor = Color.White;
+    b.FlatStyle = FlatStyle.Flat;
+    b.Size = new Size(250, 40);
+    b.Location = new Point(75, y);
+    b.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+    b.FlatAppearance.BorderSize = 0;
+    // This part makes it rounded!
+    b.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, b.Width, b.Height, 15, 15));
+    return b;
+}
+
+        
+
+        private void RegisterMenu() {
+            string cmd = "\"" + Application.ExecutablePath + "\" \"%1\"";
+            
+            // This adds the button and the icon to ALL files
+            Registry.SetValue(@"HKEY_CLASSES_ROOT\*\shell\ZanyonEncrypt", "", "Encrypt/Decrypt with ZanyonLocker™");
+            Registry.SetValue(@"HKEY_CLASSES_ROOT\*\shell\ZanyonEncrypt", "Icon", Application.ExecutablePath);
+            Registry.SetValue(@"HKEY_CLASSES_ROOT\*\shell\ZanyonEncrypt\command", "", cmd);
+
+            // This tells Windows to show "Decrypt" only on .zanyon files
+            Registry.SetValue(@"HKEY_CLASSES_ROOT\.zanyon", "", "ZanyonLocker.File");
+            Registry.SetValue(@"HKEY_CLASSES_ROOT\ZanyonLocker.File\shell\ZanyonDecrypt", "", "Decrypt with ZanyonLocker™");
+            Registry.SetValue(@"HKEY_CLASSES_ROOT\ZanyonLocker.File\shell\ZanyonDecrypt", "Icon", Application.ExecutablePath);
+            Registry.SetValue(@"HKEY_CLASSES_ROOT\ZanyonLocker.File\shell\ZanyonDecrypt\command", "", cmd);
+        }
+
+        
+
+private byte[] GetKey(string pw, byte[] salt) {
+    // 50,000 rounds is much faster for your i3 processor
+    using (Rfc2898DeriveBytes kdf = new Rfc2898DeriveBytes(pw, salt, 50000)) { 
+        return kdf.GetBytes(32); 
+    }
+}
+
+private void Setup() {
+    string pw = Microsoft.VisualBasic.Interaction.InputBox("Create Master Password:", "Setup", "");
+    if (!string.IsNullOrEmpty(pw)) {
+        status.Text = "Creating Keys... Please wait.";
+        this.Refresh(); 
+        byte[] salt = new byte[16]; 
+        new RNGCryptoServiceProvider().GetBytes(salt);
+        File.WriteAllBytes(saltFile, salt);
+        byte[] key = GetKey(pw, salt);
+        File.WriteAllText(hashFile, BitConverter.ToString(new SHA256Managed().ComputeHash(key)).Replace("-", ""));
+        MessageBox.Show("Locker Active!", "Success");
+        status.Text = "System Ready";
+    }
+
+}
+
+
+
+        private byte[] Verify() {
+            if (!File.Exists(hashFile)) { MessageBox.Show("Run Setup first!"); return null; }
+            string pw = Microsoft.VisualBasic.Interaction.InputBox("Enter Password:", "Security", "");
+            if (string.IsNullOrEmpty(pw)) return null;
+            byte[] salt = File.ReadAllBytes(saltFile);
+            byte[] key = GetKey(pw, salt);
+            string h = BitConverter.ToString(new SHA256Managed().ComputeHash(key)).Replace("-", "");
+            if (h == File.ReadAllText(hashFile)) return key;
+            MessageBox.Show("Wrong Password!"); return null;
+        }
+
+        private void LockFile() {
+            byte[] key = Verify();
+            if (key == null) return;
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK) {
+                File.WriteAllBytes(ofd.FileName + ".zanyon", new Fernet(key).Encrypt(File.ReadAllBytes(ofd.FileName)));
+                status.Text = "File Locked!";
+            }
+        }
+
+        private void UnlockFile(string path) {
+            byte[] key = Verify();
+            if (key == null) return;
+            if (path == null) {
+                OpenFileDialog ofd = new OpenFileDialog() { Filter = "Zanyon|*.zanyon" };
+                if (ofd.ShowDialog() == DialogResult.OK) path = ofd.FileName;
+            }
+            if (path != null) {
+                try {
+                    File.WriteAllBytes(path.Replace(".zanyon", ""), new Fernet(key).Decrypt(File.ReadAllBytes(path)));
+                    status.Text = "File Restored!";
+                } catch { MessageBox.Show("Error!"); }
+            }
+        }
+    }
+}
