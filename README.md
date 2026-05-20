@@ -17,15 +17,15 @@ To encrypt your first file using ZanyonLocker™, you're gonna follow these step
 
 ## 💻 **Minimum System Requirements**
 
-• Operating System - Windows 10/11, 22H2 
+**• Operating System** - Windows 10/11, 22H2 
 
-• Processor (CPU) - Intel i3 
+**• Processor (CPU)** - Intel i3 
 
-• Memory (RAM) - 4GB RAM
+**• Memory (RAM)** - 4GB RAM
 
-• Storage - 5MB Free Space
+**• Storage** - 5MB Free Space
 
-• Architecture - x64 (64-bit)
+**• Architecture** - x64 (64-bit)
 
 
 _Note: These are mimimum requirements, meaning, for example it says at least Windows 10, 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all Requirements, then ZanyonLocker™ will run perfectly. More Space = Faster Encryption._
@@ -69,14 +69,15 @@ ZanyonLocker™ will not be used for **unethical reasons**, such as hacking. Use
 
 
 
-## 🤫 **Sneak Peek on v1.4.0 - SP Coming Soon!**
+## 🤫 **Sneak Peek on v1.4.0**
 
 **ZanyonLocker™ v1.4** is in development featuring something new and cool. _Want to take a peek of what's happening?_
-Yeah, it features a new thing called the **ZanyonLocker™ v1.4 Setup** which installs the folder to your Program Files instead of a boring cluttered Downloads folder. So what's actually happening behind the hood? Let's find out. 
+Yeah, it features a new thing called the **ZanyonLocker™ v1.4 Setup** which installs the folder to your Program Files instead of a boring cluttered Downloads folder. 
 
-**A sneak peek image of the new Setup will be here... soon...**
+⚠️ WARNING: Before testing the following, please sure you are ready to take the risk of bugs. 
+You can test out an alpha testing version of v1.4 right [here.](https://github.com/RaidenCorporation/ZanyonLocker/releases/tag/For-Developer) ⚠️⚠️⚠️ BE WARNED, THIS VERSION IS BUGGY! ⚠️⚠️⚠️
 
-### _**!SNEAK PEEK ARRIVING SOON!**_
+Instant Download: If it is difficult to download v1.4 manually, you can download it instantly with one click using [this link](https://github.com/RaidenCorporation/ZanyonLocker/releases/download/For-Developer/zl-setup.zip).
 
 _Project Created By:_ Raiden Corporation
 
