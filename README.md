@@ -17,15 +17,14 @@ To encrypt your first file using ZanyonLocker™, you're gonna follow these step
 
 ## 💻 **Minimum System Requirements**
 
-**• Operating System** - Windows 10/11, 22H2 
 
-**• Processor (CPU)** - Intel i3 
-
-**• Memory (RAM)** - 4GB RAM
-
-**• Storage** - 5MB Free Space
-
-**• Architecture** - x64 (64-bit)
+| Requirement | Minimum |
+| :--- | :--- |
+| **Operating System** | Windows 10/11, 22H2 |
+| **Processor (CPU)** | Intel i3 |
+| **Memory (RAM)** | 4GB RAM |
+| **Storage** | 5MB Free Space |
+| **Architecture** | x64 (64-bit) |
 
 
 _Note: These are mimimum requirements, meaning, for example it says at least Windows 10, 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all Requirements, then ZanyonLocker™ will run perfectly. More Space = Faster Encryption._
