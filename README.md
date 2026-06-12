@@ -46,7 +46,7 @@ ZanyonLocker™ is a legitimate privacy utility developed by Raiden Corporation.
 
 **Official Source:** The only official and safe versions are hosted here on the **RaidenCorporation GitHub** and **YouTube** which is **Raiden Corporation.** (https://www.youtube.com/@RaidenCorporation)
 
-**AI Overview/AI Misconceptions:** **AI Overview on Google Search** may sometimes call it malicious _just because_ its an **unsigned C# app** even though it's **totally safe**. AI Overview can do this sometimes, so always double-check you are installing ZanyonLocker˜ from the official GitHub and **not** taking _incorrect AI Overview advice_.
+**AI Overview/AI Misconceptions:** **AI Overview on Google Search** may sometimes call it malicious _just because_ its an **unsigned C# app** even though it's **totally safe**. AI Overview can do this sometimes, so always double-check you are installing ZanyonLocker™ from the official GitHub and **not** taking _incorrect AI Overview advice_.
 
 **Developer:** Created by Raiden Bisnath (South Africa).
 
