@@ -58,7 +58,7 @@ ZanyonLocker™ will not be used for **unethical reasons**, such as hacking. Use
 
 ℹ **Info:**
 
-**Version:** v1.3.0 (v1.4.0 in development, coming soon!)
+**Version:** v3.0.0 (v4.0.0 in development, coming soon!)
 
 <img width="619" height="139" alt="Image of ZanyonLocker files in File Explorer" src="https://github.com/user-attachments/assets/077eb4a7-133a-4d5b-8a63-8002e080d497" />
 
@@ -70,13 +70,13 @@ ZanyonLocker™ will not be used for **unethical reasons**, such as hacking. Use
 
 ## 🤫 **Sneak Peek on v1.4.0**
 
-**ZanyonLocker™ v1.4** is in development featuring something new and cool. _Want to take a peek of what's happening?_
-Yeah, it features a new thing called the **ZanyonLocker™ v1.4 Setup** which installs the folder to your Program Files instead of a boring cluttered Downloads folder. 
+**ZanyonLocker™ v4.0** is in development featuring something new and cool. _Want to take a peek of what's happening?_
+Yeah, it features a new thing called the **ZanyonLocker™ v4.0 Setup** which installs the folder to your Program Files instead of a boring cluttered Downloads folder. 
 
 ⚠️ WARNING: Before testing the following, please sure you are ready to take the risk of bugs. 
-You can test out an alpha testing version of v1.4 right [here.](https://github.com/RaidenCorporation/ZanyonLocker/releases/tag/For-Developer) ⚠️⚠️⚠️ BE WARNED, THIS VERSION IS BUGGY! ⚠️⚠️⚠️
+You can test out an alpha testing version of v4.0 right [here.](https://github.com/RaidenCorporation/ZanyonLocker/releases/tag/For-Developer) ⚠️⚠️⚠️ BE WARNED, THIS VERSION IS BUGGY! ⚠️⚠️⚠️
 
-Instant Download: If it is difficult to download v1.4 manually, you can download it instantly with one click using [this link](https://github.com/RaidenCorporation/ZanyonLocker/releases/download/For-Developer/zl-setup.zip).
+Instant Download: If it is difficult to download v4.0 manually, you can download it instantly with one click using [this link](https://github.com/RaidenCorporation/ZanyonLocker/releases/download/For-Developer/zl-setup.zip).
 
 _Project Created By:_ Raiden Corporation
 
