@@ -16,7 +16,7 @@
 
 **Password Strength Meter:** Add a visual bar that shows users if their master key is **strong** or **weak.**
 
-**New UI Name - ZanyonUI:** The **ZanyonLocker User Interface (UI)** officially will have a name in **v4.0** which is, instead of me calling it a boring "ZanyonLocker user interface" or "ZanyonLocker UI", now it's gonna be sinplified and "pro-ified" to **ZanyonUI**.
+**New UI Name - ZanyonUI:** The **ZanyonLocker User Interface (UI)** officially will have a name in **v4.0** which is, instead of me calling it a boring "ZanyonLocker user interface" or "ZanyonLocker UI", now it's gonna be simplified and "pro-ified" to **ZanyonUI**.
 
 
 # Paragraph-Made Ideas
