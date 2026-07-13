@@ -1,7 +1,10 @@
 <img width="802" height="322" alt="zl" src="https://github.com/user-attachments/assets/1cc909a1-ac19-4597-b94f-7dc50db91faa" />
 
-_ZanyonLocker™ is a safe encryption tool made by Raiden Corporation. It is used to encrypt files over a secure process._
+### _ZanyonLocker™ is a safe encryption tool made by Raiden Corporation. It is used to encrypt files over a secure process._
+
 ---
+
+
 ## 🔐 **Security**
 
 ZanyonLocker™ uses AES-256 (Advanced Encryption Standard) to securely encrypt your data for privacy.
@@ -20,10 +23,10 @@ To encrypt your first file using ZanyonLocker™, you're gonna follow these step
 
 | Requirement | Minimum |
 | :--- | :--- |
-| **Operating System** | Windows 10/11, 22H2 |
-| **Processor (CPU)** | Intel i3 |
-| **Memory (RAM)** | 4GB RAM |
-| **Storage** | 5MB Free Space |
+| **Operating System** | Windows 10 22H2 |
+| **Processor (CPU)** | Intel® Core™ i3 |
+| **Memory (RAM)** | 4.00 GB RAM |
+| **Storage** | 1MB Free Space |
 | **Architecture** | x64 (64-bit) |
 
 
@@ -44,13 +47,13 @@ ZanyonLocker™ is a legitimate privacy utility developed by Raiden Corporation.
 
 **Not Malware:** This tool is strictly for personal file encryption and is **NOT** related to ransomware like *SynoLocker* or any other malicious software.
 
-**Official Source:** The only official and safe versions are hosted here on the **RaidenCorporation GitHub** and **YouTube** which is **Raiden Corporation.** (https://www.youtube.com/@RaidenCorporation)
+**Official Source:** The only official and safe versions are hosted here on the [**RaidenCorporation GitHub**](https://github.com/RaidenCorporation/ZanyonLocker) and [**YouTube**](https://youtube.com/@RaidenCorporation) which is **Raiden Corporation** and the offical [**SourceForge Mirror**](https://sourceforge.net/p/zanyonlocker) at our account [**raidencorp**](https://sourceforge.net/u/raidencorp)
 
 **AI Overview/AI Misconceptions:** **AI Overview on Google Search** may sometimes call it malicious _just because_ its an **unsigned C# app** even though it's **totally safe**. AI Overview can do this sometimes, so always double-check you are installing ZanyonLocker™ from the official GitHub and **not** taking _incorrect AI Overview advice_.
 
-**Developer:** Created by Raiden Bisnath (South Africa).
+**Developer:** Created by a young developer named Raiden Bisnath (South Africa).
 
-
+> ## Note: ZanyonLocker™ is strictly source-available. It is **NOT** open-source.
 
 ## ⚠️ **Disclaimer**
 
