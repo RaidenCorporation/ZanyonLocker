@@ -16,21 +16,53 @@
 
 # Sentence-Made Ideas
 
+---
+
+
 **Password Strength Meter:** Add a visual bar that shows users if their master key is **strong** or **weak.**
 
-**Weak:** - Weak password. [Suggest a password](offical ZL password generator built in popup)
 
-**Strong:** Strong password.
 
-**Required:** Password must include:
-**• [ ] 12 characters minimum.
-• [ ] At least 1 special character
-• [ ] … bainstorm soon**
+**Required:** **Weak password:** Weak password. Please refer to the following:
+
+Password must include:
+
+• [ ] 12 characters minimum.
+
+• [x] At least 1 capital letter (A–Z).
+
+• [ ] At least 1 small letter (a–z).
+
+• [x] At least 1 number (0–9).
+
+• [ ] At least 1 special character.
+
+<ins>Suggest a password</ins>
+
+**[ Cancel ]**    <kbd>[ OK ]</kbd>  <---- (Now you can't click it 'cause you haven't finished all steps yet, some are unchecked meaning not finished)
+
+
+**Strong password (all done):** Password must include:
+
+• [x] 12 characters minimum.
+
+• [x] At least 1 capital letter (A–Z).
+
+• [x] At least 1 small letter (a–z).
+
+• [x] At least 1 number (0–9).
+
+• [x] At least 1 special character.
+
+**[ Cancel ]**    **[ OK ]**  <---- (Now you can click it 'cause you finished all steps and the checkmarks are all there meaning you can proceed)
+
+
+---
 
 
 **New UI Name - ZanyonUI:** The **ZanyonLocker User Interface (UI)** officially will have a name in **v4.0** which is, instead of me calling it a boring "ZanyonLocker user interface" or "ZanyonLocker UI", now it's gonna be simplified and "pro-ified" to **ZanyonUI**.
 
-**Built-in Free Password Generator for Stronger Passwords:** In the new v4.0 update, there will be a **built-in, secure vault password manager/generator in the app** that generates passwords for you that's strong and hard for an attacker to brute-force.
+**Built-in Free Password Generator for Stronger Passwords:** In the new v4.0 update, there will be a **built-in, secure vault password manager/generator in the app** that generates passwords for you that are strong and hard for an attacker to brute-force.
 
 
 # Paragraph-Made Ideas
