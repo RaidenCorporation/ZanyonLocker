@@ -9,7 +9,7 @@
 
 ZanyonLocker™ uses AES-256 (Advanced Encryption Standard) to securely encrypt your data for privacy.
 ---
-## 🔰 **How To Use ZanyonLocker™**
+## 🛡 **How To Use ZanyonLocker™**
 
 To encrypt your first file using ZanyonLocker™, you're gonna follow these steps in order. So you first have to open the ZanyonLocker.exe application. Then, a window will pop up. There are three buttons, three steps. You want to first press the first button which is Setup a Master Key. Then a small window will pop up. Enter a password only YOU know. Afterwards, you want to press the second button. Also you cannot do the second button only after you made a password. So you're gonna press Lock a file. This is going to ask you for your password that you made. Type it in. Then a File Explorer window will pop up. You can pick any file/folder you want to encrypt, select it, and it will be encrypted. To see if it works, if you check the file in File Explorer the file should end in .zanyon (e.g; secret.txt » secret.txt.zanyon). If you ever want to decrypt a file, open ZanyonLocker™ and press the Unlock a file button. It will ask you for your password again, then a File Explorer window  will pop up, and you can pick the file you want to decrypt (e.g; secret.txt.zanyon » secret.txt).
 
@@ -30,7 +30,7 @@ To encrypt your first file using ZanyonLocker™, you're gonna follow these step
 | **Operating System** | Windows 10 22H2 |
 | **Processor (CPU)** | Intel® Core™ i3 |
 | **Memory (RAM)** | 4.00 GB RAM |
-| **Storage** | 1MB Free Space |
+| **Storage** | 2MB Free Space |
 | **Architecture** | x64 (64-bit) |
 
 
@@ -65,12 +65,12 @@ ZanyonLocker™ will not be used for **unethical reasons**, such as hacking. Use
 
 ℹ **Info:**
 
-**Version:** v3.0.0 (v4.0.0 in development, coming soon!)
+**Version:** v4.0.0 (v5.0.0 in development, coming soon!)
 
-<img width="619" height="139" alt="Image of ZanyonLocker files in File Explorer" src="https://github.com/user-attachments/assets/077eb4a7-133a-4d5b-8a63-8002e080d497" />
+<img width="622" height="170" alt="image" src="https://github.com/user-attachments/assets/b51303b1-2334-478c-9615-3024b4794aef" />
 
+<img width="363" height="525" alt="image" src="https://github.com/user-attachments/assets/c5aa3f61-e674-4fb3-b239-1ba5f4f1544e" />
 
-<img width="363" height="525" alt="Image of ZanyonLocker.exe Properties" src="https://github.com/user-attachments/assets/2fb22438-a00f-4d88-bb42-a7b0028fd4d2" />
 
 
 
