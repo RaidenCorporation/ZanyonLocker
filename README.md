@@ -11,10 +11,10 @@ ZanyonLocker™ uses AES-256 (Advanced Encryption Standard) to securely encrypt 
 ---
 ## 🛡 **How To Use ZanyonLocker™**
 
-To encrypt your first file using ZanyonLocker™, follow these steps in order. First, run the zl_setup.exe installer to set up ZanyonLocker™ on your PC, then open the application from your Start Menu, Desktop shortcut, or by right-clicking a file in Windows Explorer.
-When the main window opens, you will see three main steps. First, click Setup a Master Key. A window will pop up asking you to enter a password only YOU know.
-After setting your password, you can proceed to the second step: Lock a file. When prompted, enter the Master Key you created. A File Explorer window will pop up allowing you to select any file or folder to encrypt. Once selected, the file will be encrypted and given a .zanyon extension (e.g., secret.txt » secret.txt.zanyon).
-To decrypt a file, open ZanyonLocker™ and click Unlock a file. Enter your password when prompted, select the encrypted .zanyon file in the File Explorer window, and it will be restored to its original state (e.g., secret.txt.zanyon » secret.txt). You can also configure app preferences, toggle dark mode, or check for live updates directly from the Settings gear icon in the top-left header.
+To encrypt your first file using ZanyonLocker™, follow these steps in order. First, run the zl_setup.exe installer to set up ZanyonLocker™ on your PC, then open the application from your Start Menu, Desktop shortcut or by right-clicking a file in Windows Explorer.
+When the main window opens, you will see three main steps. First, click Set up a password. A window will pop up asking you to enter a password only YOU know.
+After setting your password, you can proceed to the second step: Encrypt a file. When prompted, enter the password you created. A File Explorer window will pop up allowing you to select any file or folder to encrypt. Once selected, the file will be encrypted and given a .zanyon extension (eg secret.txt » secret.txt.zanyon).
+To decrypt a file, open ZanyonLocker™ and click Decrypt a file. Enter your password when prompted, select the encrypted .zanyon file in the File Explorer window, and it will be restored to its original state (eg secret.txt.zanyon » secret.txt). You can also configure app preferences, toggle dark mode or check for live updates directly from the Settings gear icon in the top-left header.
 
 ![.zanyon File Extension Icon by Raiden Bisnath (Raiden Corporation)](https://i.imgur.com/Fd8QUmG.png)
 
