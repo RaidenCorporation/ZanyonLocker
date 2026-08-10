@@ -77,9 +77,9 @@ ZanyonLocker™ will not be used for **unethical reasons**, such as hacking. Use
 
 # 🔗 Links
 
-**7-Zip Competition:** https://github.com/RaidenCorporation/ZanyonLocker/wiki
+**7-Zip Competition/Wiki:** https://github.com/RaidenCorporation/ZanyonLocker/wiki
 
-**ROADMAP (Future Ideas) - ZanyonUI:** https://github.com/RaidenCorporation/ZanyonLocker/blob/main/ROADMAP.md
+**ROADMAP (Future Ideas) NOT UPDATED YET BTW:** https://github.com/RaidenCorporation/ZanyonLocker/blob/main/ROADMAP.md
 
 **SourceForge Version:** https://sourceforge.net/p/zanyonlocker
 
