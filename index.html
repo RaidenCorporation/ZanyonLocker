@@ -52,6 +52,10 @@
             letter-spacing: 0.5px;
         }
 
+        .nav-buttons {
+            flex: 1;
+        }
+
         .sidebar button {
             width: 100%;
             padding: 14px 16px;
@@ -79,6 +83,23 @@
             border-color: #3b82f6;
             color: #ffffff;
             box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Bottom Pinned Share Button Styling */
+        .sidebar button.share-btn {
+            margin-top: auto;
+            margin-bottom: 0;
+            background: rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.3);
+            color: #6ee7b7;
+            text-align: center;
+        }
+
+        .sidebar button.share-btn:hover {
+            background: rgba(16, 185, 129, 0.3);
+            border-color: rgba(16, 185, 129, 0.5);
+            color: #ffffff;
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
         }
 
         /* Main Content Area Styling */
@@ -173,6 +194,11 @@
             color: #ffffff;
         }
 
+        ol li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
         .pro-tip {
             background: rgba(234, 179, 8, 0.15);
             border-left: 4px solid #eab308;
@@ -230,9 +256,16 @@
     <!-- Floating Mica & Glass Sidebar -->
     <div class="sidebar">
         <h2>ZanyonLocker™</h2>
-        <button id="btn-readme" class="active" onclick="showSection('readme')">Readme & Instructions</button>
-        <button id="btn-download" onclick="showSection('download')">Download for Free</button>
-        <button id="btn-links" onclick="showSection('links')">Links</button>
+        <div class="nav-buttons">
+            <button id="btn-readme" class="active" onclick="showSection('readme')">Readme & Instructions</button>
+            <button id="btn-whatsnew" onclick="showSection('whatsnew')">What's new in the latest version</button>
+            <button id="btn-requirements" onclick="showSection('requirements')">Requirements to Run</button>
+            <button id="btn-download" onclick="showSection('download')">Download for Free</button>
+            <button id="btn-links" onclick="showSection('links')">Links</button>
+        </div>
+        
+        <!-- Pinned Bottom Share Button -->
+        <button id="btn-share" class="share-btn" onclick="shareWebsite()">🔗 Share Website</button>
     </div>
 
     <!-- Main Content Area -->
@@ -342,7 +375,90 @@
             <p><strong>Copyright © Raiden Corporation 2026.</strong></p>
         </div>
 
-        <!-- 2. DOWNLOAD FOR FREE SECTION -->
+        <!-- 2. WHAT'S NEW SECTION -->
+        <div id="whatsnew-section" class="section">
+            <p style="font-size: 17px; color: #cbd5e1;">
+                <em>This release of ZanyonLocker, <strong>v4.0</strong>, is a <strong>very major update</strong> for <strong>ZanyonLocker.</strong></em>
+            </p>
+
+            <hr>
+
+            <h2>🔵 What's new</h2>
+            <ol style="padding-left: 20px;">
+                <li><strong>New and improved UI:</strong> Instead of a generic UI, I have officially launched ZanyonUI 1.0, which is the official UI for ZanyonLocker starting from ZanyonLocker v4.0.</li>
+                <li><strong>New buttons:</strong> There is now a Settings button where you can configure settings for the ZanyonLocker app and view the details such as the ZanyonLocker version and the developer.</li>
+                <li><strong>Button change (minor):</strong> I have changed the Master key setup button to '<strong>Set up a password</strong>' to make it easier and more modern speaking.</li>
+                <li><strong>Check for updates button:</strong> Now you can easily check for updates if there's a new ZanyonLocker release. If you are running an outdated version, it will tell you a new version is available and it will give you a download button. If you are running the latest version, it will tell you that you are running the latest.</li>
+                <li><strong>New Setup (credits to Inno Setup):</strong> Now, you finish a setup which lets you pick what you want to install with the ZanyonLocker app (eg Create a desktop shortcut) and then when it's finished, it launches the ZanyonLocker app for you. The setup is named <code>zl_setup.exe</code>.</li>
+            </ol>
+
+            <hr>
+
+            <h2>🟡 Unreleased features (in development for v5.0)</h2>
+            <p><strong>CM (Compression Mode):</strong> This feature is currently not available and is in development. This will be available in v5.0, the next major update.</p>
+
+            <hr>
+
+            <p style="font-size: 16px; color: #e2e8f0; margin-bottom: 25px;">
+                I hope this update helped and you like it because I've taken a lot of time to create v4.0!
+            </p>
+
+            <div>
+                <a href="https://sourceforge.net/projects/zanyonlocker/files/v4.0z1.0/zl_setup.exe/download" target="_blank">
+                    <img src="https://a.fsdn.com/con/app/sf-download-button" alt="Download ZanyonLocker">
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. REQUIREMENTS TO RUN SECTION -->
+        <div id="requirements-section" class="section">
+            <h2>💻 <strong>Minimum System Requirements</strong></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Requirement</th>
+                        <th>Minimum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Operating System</strong></td>
+                        <td>Windows 10 22H2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Processor (CPU)</strong></td>
+                        <td>Intel® Core™ i3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memory (RAM)</strong></td>
+                        <td>4.00 GB RAM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Storage</strong></td>
+                        <td>2MB Free Space</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Architecture</strong></td>
+                        <td>x64 (64-bit)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><em>Note: These are minimum requirements, meaning, for example it says at least Windows 10, 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all Requirements, then ZanyonLocker™ will run perfectly. More Space = Faster Encryption.</em></p>
+
+            <hr>
+
+            <p><strong>How To Check Your PC Info To See Whether ZanyonLocker™ Can Run On It</strong></p>
+            <p>First, press <strong>Windows Key + R</strong> on your keyboard. Then, type <strong>msinfo32</strong> and press <strong>enter.</strong> This will give you all the specs of your PC.</p>
+            
+            <p><img src="https://github.com/user-attachments/assets/662a027b-b829-4e77-b7e5-64808968e15c" alt="Windows Run Dialogue" width="399" height="206"></p>
+            <p>
+                <img src="https://github.com/user-attachments/assets/dbfa382c-f497-4b98-bcc3-c397ff5619ae" alt="Windows Key on keyboard" width="195" height="204">
+                <img src="https://github.com/user-attachments/assets/bf7ae126-9c07-4b74-a9aa-765f33d45e7c" alt="R Key on keyboard" width="105" height="101">
+            </p>
+        </div>
+
+        <!-- 4. DOWNLOAD FOR FREE SECTION -->
         <div id="download-section" class="section">
             <h1>Download for Free</h1>
             <p style="font-size: 18px; color: #cbd5e1; margin-bottom: 30px;">
@@ -359,7 +475,7 @@
             </div>
         </div>
 
-        <!-- 3. LINKS SECTION -->
+        <!-- 5. LINKS SECTION -->
         <div id="links-section" class="section">
             <h1>All My Links</h1>
             <p>Check out all of my official links without any crap: <a href="https://linktr.ee/RaidenCorp" target="_blank">Linktree</a></p>
@@ -371,22 +487,35 @@
 
     </div>
 
-    <!-- Script to Handle Section Switching -->
+    <!-- Script to Handle Section Switching and Sharing -->
     <script>
         function showSection(sectionId) {
             // Hide all sections
             document.getElementById('readme-section').classList.remove('active');
+            document.getElementById('whatsnew-section').classList.remove('active');
+            document.getElementById('requirements-section').classList.remove('active');
             document.getElementById('download-section').classList.remove('active');
             document.getElementById('links-section').classList.remove('active');
 
             // Deactivate all buttons
             document.getElementById('btn-readme').classList.remove('active');
+            document.getElementById('btn-whatsnew').classList.remove('active');
+            document.getElementById('btn-requirements').classList.remove('active');
             document.getElementById('btn-download').classList.remove('active');
             document.getElementById('btn-links').classList.remove('active');
 
             // Show selected section and activate corresponding button
             document.getElementById(sectionId + '-section').classList.add('active');
             document.getElementById('btn-' + sectionId).classList.add('active');
+        }
+
+        function shareWebsite() {
+            var websiteUrl = "https://raidencorporation.github.io/ZanyonLocker/";
+            navigator.clipboard.writeText(websiteUrl).then(function() {
+                alert("Copied link to clipboard!");
+            }).catch(function() {
+                alert("Failed to copy link. Here is the URL: " + websiteUrl);
+            });
         }
     </script>
 
