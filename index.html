@@ -18,22 +18,32 @@
             color: #f1f5f9;
             padding: 16px;
             gap: 16px;
+            overflow: hidden; /* Prevents outer page scrollbar */
         }
 
-        /* Floating Modern Windows 11 Sidebar Styling with Sleek Shadow */
+        /* Windows 11 Mica & Glassy Sidebar Styling */
         .sidebar {
             width: 280px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            /* Mica glass effect with subtle lighting gradient */
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            
+            /* Sleek Windows 11 glassy border highlight */
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-left: 1px solid rgba(255, 255, 255, 0.20);
             border-radius: 16px;
+            
             color: white;
             padding: 24px;
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 15px rgba(255, 255, 255, 0.05);
+            
+            /* Elevation depth shadow */
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 
+                        0 0 20px rgba(255, 255, 255, 0.04) inset;
         }
 
         .sidebar h2 {
@@ -82,6 +92,13 @@
             max-width: 950px;
             margin: 0 auto;
             width: 100%;
+            /* Hide scrollbar for Chrome, Safari, Opera */
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            /* Hide scrollbar for IE, Edge, and Firefox */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
         .section {
@@ -192,7 +209,7 @@
 </head>
 <body>
 
-    <!-- Floating Translucent Sidebar -->
+    <!-- Floating Mica & Glass Sidebar -->
     <div class="sidebar">
         <h2>ZanyonLocker™</h2>
         <button id="btn-readme" class="active" onclick="showSection('readme')">Readme & Instructions</button>
