@@ -84,34 +84,39 @@
         /* Main Content Area Styling */
         .content {
             flex: 1;
-            padding: 24px 40px;
+            padding: 24px 30px 24px 40px;
             overflow-y: auto;
             max-width: 950px;
             margin: 0 auto;
             width: 100%;
             
-            /* Firefox Thin Custom Scrollbar */
+            /* Firefox Scrollbar Colour */
             scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+            scrollbar-color: rgba(255, 255, 255, 0.45) rgba(0, 0, 0, 0.25);
         }
 
-        /* Sleek Modern Dark Scrollbar for Chrome, Edge, Safari */
+        /* Visible Modern Dark Pill Scrollbar for Chrome, Edge, Safari */
         .content::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
 
         .content::-webkit-scrollbar-track {
-            background: transparent;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 20px;
         }
 
         .content::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.45);
             border-radius: 20px;
             border: 2px solid transparent;
+            background-clip: content-box;
         }
 
         .content::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            border: 2px solid transparent;
+            background-clip: content-box;
         }
 
         .section {
