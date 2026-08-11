@@ -9,20 +9,6 @@
             box-sizing: border-box;
         }
 
-        /* Completely disable visible scrollbars everywhere */
-        html, body, .content {
-            -ms-overflow-style: none !important;
-            scrollbar-width: none !important;
-        }
-
-        ::-webkit-scrollbar,
-        .content::-webkit-scrollbar {
-            display: none !important;
-            width: 0 !important;
-            height: 0 !important;
-            background: transparent !important;
-        }
-
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,7 +18,7 @@
             color: #f1f5f9;
             padding: 16px;
             gap: 16px;
-            overflow: hidden;
+            overflow: hidden; /* Keeps the outer window locked */
         }
 
         /* Windows 11 Mica & Glassy Sidebar Styling */
@@ -103,6 +89,29 @@
             max-width: 950px;
             margin: 0 auto;
             width: 100%;
+            
+            /* Firefox Thin Custom Scrollbar */
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+        }
+
+        /* Sleek Modern Dark Scrollbar for Chrome, Edge, Safari */
+        .content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .content::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            border: 2px solid transparent;
+        }
+
+        .content::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.4);
         }
 
         .section {
