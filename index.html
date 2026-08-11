@@ -155,6 +155,64 @@
             display: block;
         }
 
+        /* Accordion Collapsible Styling */
+        .faq-item {
+            margin-bottom: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.25s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 18px 20px;
+            background: transparent;
+            border: none;
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+        }
+
+        .faq-question::after {
+            content: '＋';
+            font-size: 20px;
+            color: #60a5fa;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '－';
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), padding 0.35s ease;
+            padding: 0 20px;
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 20px 20px;
+            transition: max-height 0.5s ease-in-out, padding 0.35s ease;
+        }
+
         /* Typography & Layout Formatting */
         h1, h2, h3 {
             color: #ffffff;
@@ -260,6 +318,7 @@
             <button id="btn-readme" class="active" onclick="showSection('readme')">Readme & Instructions</button>
             <button id="btn-whatsnew" onclick="showSection('whatsnew')">What's new in the latest version</button>
             <button id="btn-requirements" onclick="showSection('requirements')">Requirements to Run</button>
+            <button id="btn-faq" onclick="showSection('faq')">FAQ & Troubleshooting</button>
             <button id="btn-download" onclick="showSection('download')">Download for Free</button>
             <button id="btn-links" onclick="showSection('links')">Links</button>
         </div>
@@ -458,7 +517,42 @@
             </p>
         </div>
 
-        <!-- 4. DOWNLOAD FOR FREE SECTION -->
+        <!-- 4. FAQ & TROUBLESHOOTING SECTION -->
+        <div id="faq-section" class="section">
+            <h1>❓ ZanyonLocker FAQ / Troubleshooting</h1>
+            <p style="color: #cbd5e1; margin-bottom: 25px;">Click on any question below to reveal the answer.</p>
+
+            <!-- Question 1 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">What if my PC can't run ZanyonLocker?</button>
+                <div class="faq-answer">
+                    <p>If your PC hasn't met the system requirements to officially run ZanyonLocker on your system, you might want to Upgrade your version of Windows, Get a newer & modern PC or Physically install a new RAM stick to your computer.</p>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Where are my encrypted .zanyon files saved?</button>
+                <div class="faq-answer">
+                    <p>To find where your encrypted file has went, look for the place where the original decrypted file was (eg Desktop) and your encrypted <code>.zanyon</code> version should be there too.</p>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">What happens if I lose my password?</button>
+                <div class="faq-answer">
+                    <p>If you lose your master key password for ZanyonLocker, <strong>there is absolutely no guarantee or way that you can get your file back.</strong> If you really need your file back and you lost your password to the file or forgot it, you can try looking if the master key file went into the Recycle Bin or if you hid it in File Explorer. Otherwise, there is no way to get your file back.</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <h3>FAQ Submission</h3>
+            <p>Are we missing something? Request us to add it by emailing me at <a href="mailto:RaidenCorporation@proton.me">RaidenCorporation@proton.me</a>!</p>
+        </div>
+
+        <!-- 5. DOWNLOAD FOR FREE SECTION -->
         <div id="download-section" class="section">
             <h1>Download for Free</h1>
             <p style="font-size: 18px; color: #cbd5e1; margin-bottom: 30px;">
@@ -475,7 +569,7 @@
             </div>
         </div>
 
-        <!-- 5. LINKS SECTION -->
+        <!-- 6. LINKS SECTION -->
         <div id="links-section" class="section">
             <h1>All My Links</h1>
             <p>Check out all of my official links without any crap: <a href="https://linktr.ee/RaidenCorp" target="_blank">Linktree</a></p>
@@ -487,13 +581,14 @@
 
     </div>
 
-    <!-- Script to Handle Section Switching and Sharing -->
+    <!-- Script to Handle Section Switching, Accordions, and Sharing -->
     <script>
         function showSection(sectionId) {
             // Hide all sections
             document.getElementById('readme-section').classList.remove('active');
             document.getElementById('whatsnew-section').classList.remove('active');
             document.getElementById('requirements-section').classList.remove('active');
+            document.getElementById('faq-section').classList.remove('active');
             document.getElementById('download-section').classList.remove('active');
             document.getElementById('links-section').classList.remove('active');
 
@@ -501,12 +596,18 @@
             document.getElementById('btn-readme').classList.remove('active');
             document.getElementById('btn-whatsnew').classList.remove('active');
             document.getElementById('btn-requirements').classList.remove('active');
+            document.getElementById('btn-faq').classList.remove('active');
             document.getElementById('btn-download').classList.remove('active');
             document.getElementById('btn-links').classList.remove('active');
 
             // Show selected section and activate corresponding button
             document.getElementById(sectionId + '-section').classList.add('active');
             document.getElementById('btn-' + sectionId).classList.add('active');
+        }
+
+        function toggleFaq(buttonElement) {
+            var item = buttonElement.parentElement;
+            item.classList.toggle('active');
         }
 
         function shareWebsite() {
