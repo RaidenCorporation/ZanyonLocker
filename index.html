@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZanyonLocker™ - Raiden Corporation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            height: 100vh;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            color: #f1f5f9;
+        }
+
+        /* Translucent Sidebar Styling */
+        .sidebar {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar h2 {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            letter-spacing: 0.5px;
+        }
+
+        .sidebar button {
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .sidebar button:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateX(3px);
+        }
+
+        .sidebar button.active {
+            background: #2563eb;
+            border-color: #3b82f6;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Main Content Area Styling */
+        .content {
+            flex: 1;
+            padding: 40px;
+            overflow-y: auto;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .section {
+            display: none;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(8px);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        /* Typography & Layout Formatting */
+        h1, h2, h3 {
+            color: #ffffff;
+        }
+
+        h2 {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.15);
+            margin: 25px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        table th, table td {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 16px;
+            text-align: left;
+        }
+
+        table th {
+            background: rgba(255, 255, 255, 0.08);
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .pro-tip {
+            background: rgba(234, 179, 8, 0.15);
+            border-left: 4px solid #eab308;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 6px;
+            color: #fef08a;
+        }
+
+        .disclaimer-box {
+            background: rgba(239, 68, 68, 0.15);
+            border-left: 4px solid #ef4444;
+            color: #fca5a5;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 6px;
+        }
+
+        .info-box {
+            background: rgba(148, 163, 184, 0.15);
+            border-left: 4px solid #94a3b8;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 6px;
+            color: #e2e8f0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Left Translucent Sidebar -->
+    <div class="sidebar">
+        <h2>ZanyonLocker™</h2>
+        <button id="btn-readme" class="active" onclick="showSection('readme')">Readme & Instructions</button>
+        <button id="btn-download" onclick="showSection('download')">Download for Free</button>
+        <button id="btn-links" onclick="showSection('links')">Links</button>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="content">
+
+        <!-- 1. README & INSTRUCTIONS SECTION -->
+        <div id="readme-section" class="section active">
+            <p><img src="https://github.com/user-attachments/assets/1cc909a1-ac19-4597-b94f-7dc50db91faa" alt="zl" width="802" height="322"></p>
+            
+            <h3><em>ZanyonLocker™ is a safe encryption tool made by Raiden Corporation. It is used to encrypt files over a secure process.</em></h3>
+
+            <hr>
+
+            <h2>🔐 <strong>Security</strong></h2>
+            <p>ZanyonLocker™ uses AES-256 (Advanced Encryption Standard) to securely encrypt your data for privacy.</p>
+
+            <hr>
+
+            <h2>🛡 <strong>How To Use ZanyonLocker™</strong></h2>
+            <p>To encrypt your first file using ZanyonLocker™, follow these steps in order. First, run the <code>zl_setup.exe</code> installer to set up ZanyonLocker™ on your PC, then open the application from your Start Menu, Desktop shortcut or by right-clicking a file in Windows Explorer.</p>
+            <p>When the main window opens, you will see three main steps. First, click <strong>Set up a password</strong>. A window will pop up asking you to enter a password only YOU know.</p>
+            <p>After setting your password, you can proceed to the second step: <strong>Encrypt a file</strong>. When prompted, enter the password you created. A File Explorer window will pop up allowing you to select any file or folder to encrypt. Once selected, the file will be encrypted and given a <code>.zanyon</code> extension (e.g. <code>secret.txt</code> » <code>secret.txt.zanyon</code>).</p>
+            <p>To decrypt a file, open ZanyonLocker™ and click <strong>Decrypt a file</strong>. Enter your password when prompted, select the encrypted <code>.zanyon</code> file in the File Explorer window, and it will be restored to its original state (e.g. <code>secret.txt.zanyon</code> » <code>secret.txt</code>). You can also configure app preferences, toggle dark mode or check for live updates directly from the Settings gear icon in the top-left header.</p>
+
+            <p><img src="https://i.imgur.com/Fd8QUmG.png" alt=".zanyon File Extension Icon by Raiden Bisnath (Raiden Corporation)"></p>
+
+            <div class="pro-tip">
+                💡 <strong>Pro Tip:</strong> ZanyonLocker™ keeps the original file for safety. To ensure total privacy, <strong>manually delete the original file</strong> <em>after</em> you see the <code>.zanyon</code> version created.
+            </div>
+
+            <hr>
+
+            <h2>💻 <strong>Minimum System Requirements</strong></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Requirement</th>
+                        <th>Minimum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Operating System</strong></td>
+                        <td>Windows 10 22H2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Processor (CPU)</strong></td>
+                        <td>Intel® Core™ i3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memory (RAM)</strong></td>
+                        <td>4.00 GB RAM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Storage</strong></td>
+                        <td>2MB Free Space</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Architecture</strong></td>
+                        <td>x64 (64-bit)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><em>Note: These are minimum requirements, meaning, for example it says at least Windows 10, 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all Requirements, then ZanyonLocker™ will run perfectly. More Space = Faster Encryption.</em></p>
+
+            <hr>
+
+            <p><strong>How To Check Your PC Info To See Whether ZanyonLocker™ Can Run On It</strong></p>
+            <p>First, press <strong>Windows Key + R</strong> on your keyboard. Then, type <strong>msinfo32</strong> and press <strong>enter.</strong> This will give you all the specs of your PC.</p>
+            
+            <p><img src="https://github.com/user-attachments/assets/662a027b-b829-4e77-b7e5-64808968e15c" alt="Windows Run Dialogue" width="399" height="206"></p>
+            <p>
+                <img src="https://github.com/user-attachments/assets/dbfa382c-f497-4b98-bcc3-c397ff5619ae" alt="Windows Key on keyboard" width="195" height="204">
+                <img src="https://github.com/user-attachments/assets/bf7ae126-9c07-4b74-a9aa-765f33d45e7c" alt="R Key on keyboard" width="105" height="101">
+            </p>
+
+            <hr>
+
+            <h2>🔰 <strong>Verification & Safety</strong></h2>
+            <p>ZanyonLocker™ is a legitimate privacy utility developed by Raiden Corporation.</p>
+            <p><strong>Not Malware:</strong> This tool is strictly for personal file encryption and is <strong>NOT</strong> related to ransomware like <em>SynoLocker</em> or any other malicious software.</p>
+            <p><strong>Official Source:</strong> The only official and safe versions are hosted here on the <a href="https://github.com/RaidenCorporation/ZanyonLocker" target="_blank"><strong>RaidenCorporation GitHub</strong></a> and <a href="https://youtube.com/@RaidenCorporation" target="_blank"><strong>YouTube</strong></a> which is <strong>Raiden Corporation</strong> and the official <a href="https://sourceforge.net/p/zanyonlocker" target="_blank"><strong>SourceForge Mirror</strong></a> at our account <a href="https://sourceforge.net/u/raidencorp" target="_blank"><strong>raidencorp</strong></a>.</p>
+            <p><strong>AI Overview/AI Misconceptions:</strong> <strong>AI Overview on Google Search</strong> may sometimes call it malicious <em>just because</em> it's an <strong>unsigned C# app</strong> even though it's <strong>totally safe</strong>. AI Overview can do this sometimes, so always double-check you are installing ZanyonLocker™ from the official GitHub and <strong>not</strong> taking <em>incorrect AI Overview advice</em>.</p>
+            <p><strong>Developer:</strong> Created by a young developer named Raiden Bisnath (South Africa).</p>
+
+            <div class="info-box">
+                <strong>Note:</strong> ZanyonLocker™ is strictly source-available. It is <strong>NOT</strong> open-source.
+            </div>
+
+            <div class="disclaimer-box">
+                <h2>⚠️ <strong>Disclaimer</strong></h2>
+                <p>ZanyonLocker™ will not be used for <strong>unethical reasons</strong>, such as hacking. Use ZanyonLocker™ <em>only</em> for <strong>ethical</strong> reasons.</p>
+            </div>
+
+            <div class="info-box">
+                <p>ℹ <strong>Info:</strong></p>
+                <p><strong>Version:</strong> v4.0.0 (v5.0.0 in development, coming soon!)</p>
+            </div>
+
+            <p><img src="https://github.com/user-attachments/assets/b51303b1-2334-478c-9615-3024b4794aef" alt="image" width="622" height="170"></p>
+            <p><img src="https://github.com/user-attachments/assets/c5aa3f61-e674-4fb3-b239-1ba5f4f1544e" alt="image" width="363" height="525"></p>
+
+            <hr>
+
+            <p><em>Project Created By:</em> Raiden Corporation</p>
+            <p><strong>Copyright © Raiden Corporation 2026.</strong></p>
+        </div>
+
+        <!-- 2. DOWNLOAD FOR FREE SECTION -->
+        <div id="download-section" class="section">
+            <h1>Download for Free</h1>
+            <p style="font-size: 18px; color: #cbd5e1; margin-bottom: 30px;">
+                Download ZanyonLocker latest version securely in a click
+            </p>
+
+            <!-- SourceForge Direct Download Button -->
+            <div style="margin-bottom: 25px;">
+                <a href="https://sourceforge.net/projects/zanyonlocker/files/latest/download" 
+                   target="_blank" 
+                   style="display: inline-block; background: #ee1c25; color: white; padding: 16px 32px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 15px rgba(238, 28, 37, 0.4); transition: transform 0.2s ease;">
+                   ⬇ Download Latest Version (SourceForge)
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. LINKS SECTION -->
+        <div id="links-section" class="section">
+            <h1>All My Links</h1>
+            <p>Check out all of my official links without any crap: <a href="https://linktr.ee/RaidenCorp" target="_blank">Linktree</a></p>
+            <p>All of my YouTube videos (subscribe!): <a href="https://www.youtube.com/@RaidenCorporation?sub_confirmation=1" target="_blank">YouTube</a></p>
+            <p>My official GitHub to download my projects: <a href="https://github.com/RaidenCorporation" target="_blank">GitHub</a></p>
+            <p>My official SourceForge to download my projects easily for people who aren't tech-savvy: <a href="https://sourceforge.net/u/raidencorp" target="_blank">SourceForge</a></p>
+            <p>Download my free media from Pixabay: <a href="https://pixabay.com/users/raidencorporation-53407453" target="_blank">Pixabay</a></p>
+        </div>
+
+    </div>
+
+    <!-- Script to Handle Section Switching -->
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.getElementById('readme-section').classList.remove('active');
+            document.getElementById('download-section').classList.remove('active');
+            document.getElementById('links-section').classList.remove('active');
+
+            // Deactivate all buttons
+            document.getElementById('btn-readme').classList.remove('active');
+            document.getElementById('btn-download').classList.remove('active');
+            document.getElementById('btn-links').classList.remove('active');
+
+            // Show selected section and activate corresponding button
+            document.getElementById(sectionId + '-section').classList.add('active');
+            document.getElementById('btn-' + sectionId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
