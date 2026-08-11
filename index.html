@@ -21,6 +21,31 @@
             overflow: hidden; /* Keeps the outer window locked */
         }
 
+        /* Toast Notification Styling */
+        .toast-notification {
+            position: fixed;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1c1c1e;
+            color: #f1f5f9;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .toast-notification.show {
+            top: 24px;
+            opacity: 1;
+        }
+
         /* Windows 11 Mica & Glassy Sidebar Styling */
         .sidebar {
             width: 280px;
@@ -311,6 +336,9 @@
 </head>
 <body>
 
+    <!-- Floating Toast Notification -->
+    <div id="toast" class="toast-notification">Copied to clipboard</div>
+
     <!-- Floating Mica & Glass Sidebar -->
     <div class="sidebar">
         <h2>ZanyonLocker™</h2>
@@ -581,7 +609,7 @@
 
     </div>
 
-    <!-- Script to Handle Section Switching, Accordions, and Sharing -->
+    <!-- Script to Handle Section Switching, Accordions, and Custom Toast Sharing -->
     <script>
         function showSection(sectionId) {
             // Hide all sections
@@ -610,13 +638,26 @@
             item.classList.toggle('active');
         }
 
+        var toastTimeout;
         function shareWebsite() {
             var websiteUrl = "https://raidencorporation.github.io/ZanyonLocker/";
+            
             navigator.clipboard.writeText(websiteUrl).then(function() {
-                alert("Copied link to clipboard!");
+                showToast("Copied to clipboard");
             }).catch(function() {
-                alert("Failed to copy link. Here is the URL: " + websiteUrl);
+                showToast("Failed to copy link");
             });
+        }
+
+        function showToast(message) {
+            var toast = document.getElementById("toast");
+            toast.innerText = message;
+            toast.classList.add("show");
+
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(function() {
+                toast.classList.remove("show");
+            }, 2500);
         }
     </script>
 
