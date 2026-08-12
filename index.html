@@ -239,6 +239,17 @@
             transition: max-height 0.5s ease-in-out, padding 0.35s ease;
         }
 
+        /* FAQ Search Clear Button Click Pulse Animation */
+        @keyframes clearBtnTap {
+            0% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(0.75); }
+            100% { transform: translateY(-50%) scale(1); }
+        }
+
+        .clear-btn-active {
+            animation: clearBtnTap 0.25s ease-in-out;
+        }
+
         /* Typography & Layout Formatting */
         h1, h2, h3 {
             color: #ffffff;
@@ -606,10 +617,15 @@
             <h1>❓ ZanyonLocker FAQ / Troubleshooting</h1>
             <p style="color: #cbd5e1; margin-bottom: 20px;">Click on any question below to reveal the answer.</p>
 
-            <!-- FAQ Search Bar -->
-            <div style="margin-bottom: 25px;">
+            <!-- FAQ Search Bar with Animated Clear Button -->
+            <div style="position: relative; margin-bottom: 25px;">
                 <input type="text" id="faq-search" onkeyup="searchFaq()" placeholder="Search FAQ..." 
-                       style="width: 100%; padding: 14px 18px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; color: #ffffff; font-size: 15px; outline: none; transition: border-color 0.25s ease;">
+                       style="width: 100%; padding: 14px 45px 14px 18px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; color: #ffffff; font-size: 15px; outline: none; transition: border-color 0.25s ease;">
+                
+                <button id="clear-search-btn" onclick="clearFaqSearch()" 
+                        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%) scale(0.8); background: rgba(255, 255, 255, 0.1); border: none; color: #cbd5e1; width: 26px; height: 26px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; opacity: 0; pointer-events: none; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);">
+                    ✕
+                </button>
             </div>
 
             <!-- Question 1 -->
@@ -676,7 +692,7 @@
 
     </div>
 
-    <!-- Script to Handle Section Switching, Accordions, Search, and Custom Toast Sharing -->
+    <!-- Script to Handle Section Switching, Accordions, Animated Search Clear, and Custom Toast Sharing -->
     <script>
         function showSection(sectionId) {
             // Hide all sections
@@ -706,10 +722,24 @@
         }
 
         function searchFaq() {
-            var input = document.getElementById("faq-search").value.toLowerCase();
+            var inputElement = document.getElementById("faq-search");
+            var input = inputElement.value.toLowerCase();
             var items = document.querySelectorAll(".faq-item");
+            var clearBtn = document.getElementById("clear-search-btn");
             var visibleCount = 0;
 
+            // Show or hide the clear (X) button with smooth scale & fade
+            if (input.length > 0) {
+                clearBtn.style.opacity = "1";
+                clearBtn.style.pointerEvents = "auto";
+                clearBtn.style.transform = "translateY(-50%) scale(1)";
+            } else {
+                clearBtn.style.opacity = "0";
+                clearBtn.style.pointerEvents = "none";
+                clearBtn.style.transform = "translateY(-50%) scale(0.8)";
+            }
+
+            // Filter FAQ items
             items.forEach(function(item) {
                 var text = item.innerText.toLowerCase();
                 if (text.includes(input)) {
@@ -720,12 +750,29 @@
                 }
             });
 
+            // Handle "No results" message
             var noResults = document.getElementById("no-faq-results");
             if (visibleCount === 0) {
                 noResults.style.display = "block";
             } else {
                 noResults.style.display = "none";
             }
+        }
+
+        function clearFaqSearch() {
+            var clearBtn = document.getElementById("clear-search-btn");
+            var searchInput = document.getElementById("faq-search");
+
+            // Play tap animation
+            clearBtn.classList.add("clear-btn-active");
+            setTimeout(function() {
+                clearBtn.classList.remove("clear-btn-active");
+            }, 250);
+
+            // Clear text and refresh list
+            searchInput.value = "";
+            searchFaq();
+            searchInput.focus();
         }
 
         var toastTimeout;
