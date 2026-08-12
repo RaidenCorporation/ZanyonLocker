@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZanyonLocker Official Website</title>
+    <title>ZanyonLocker™ - Raiden Corporation</title>
     <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Microsoft Fluent Emoji Font CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fluent-emoji-font@latest/dist/fluent-emoji-font.css">
+
     <style>
         /* CSS Theme Custom Variables */
         :root {
@@ -76,7 +80,7 @@
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', 'Fluent Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             height: 100vh;
             background: var(--bg-gradient);
@@ -485,7 +489,7 @@
             color: var(--accent-blue);
         }
 
-        /* 📱 Mobile Responsiveness Media Queries */
+        /* Mobile Responsiveness Media Queries */
         @media (max-width: 768px) {
             body {
                 flex-direction: column !important;
@@ -548,7 +552,7 @@
 
     <!-- Floating Mica & Glass Sidebar -->
     <div class="sidebar">
-        <h2>ZanyonLocker</h2>
+        <h2>ZanyonLocker™</h2>
         <div class="nav-buttons">
             <button id="btn-readme" class="active" onclick="showSection('readme')">Readme & Instructions</button>
             <button id="btn-whatsnew" onclick="showSection('whatsnew')">What's new in the latest version</button>
@@ -823,7 +827,7 @@
 
         <!-- 6. THEME SWITCHER SECTION -->
         <div id="theme-section" class="section">
-            <h1>🎨 Choose a theme</h1>
+            <h1>Choose Theme</h1>
             <p style="margin-bottom: 20px;">Select your preferred look for the site.</p>
 
             <div class="theme-grid">
