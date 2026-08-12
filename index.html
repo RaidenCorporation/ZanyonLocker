@@ -6,6 +6,70 @@
     <title>ZanyonLocker™ - Raiden Corporation</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
+        /* CSS Theme Custom Variables */
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            --text-color: #f1f5f9;
+            --text-muted: #cbd5e1;
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent-blue: #38bdf8;
+            --sidebar-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+            --sidebar-border: rgba(255, 255, 255, 0.14);
+            --card-bg: rgba(15, 23, 42, 0.6);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --item-bg: rgba(255, 255, 255, 0.04);
+            --code-bg: rgba(255, 255, 255, 0.15);
+        }
+
+        /* 1. ZanyonUI Light */
+        body[data-theme="zanyon-light"] {
+            --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #dbeafe 100%);
+            --text-color: #0f172a;
+            --text-muted: #334155;
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent-blue: #0284c7;
+            --sidebar-bg: rgba(255, 255, 255, 0.75);
+            --sidebar-border: rgba(37, 99, 235, 0.25);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-border: rgba(37, 99, 235, 0.2);
+            --item-bg: rgba(37, 99, 235, 0.05);
+            --code-bg: rgba(37, 99, 235, 0.12);
+        }
+
+        /* 2. Monokai Dark */
+        body[data-theme="monokai-dark"] {
+            --bg-gradient: linear-gradient(135deg, #18080c 0%, #2c0b14 50%, #0f172a 100%);
+            --text-color: #f1f5f9;
+            --text-muted: #cbd5e1;
+            --primary-color: #e11d48;
+            --primary-hover: #be123c;
+            --accent-blue: #fb7185;
+            --sidebar-bg: linear-gradient(135deg, rgba(225, 29, 72, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
+            --sidebar-border: rgba(225, 29, 72, 0.25);
+            --card-bg: rgba(28, 12, 18, 0.7);
+            --card-border: rgba(225, 29, 72, 0.15);
+            --item-bg: rgba(255, 255, 255, 0.04);
+            --code-bg: rgba(225, 29, 72, 0.2);
+        }
+
+        /* 3. Monokai Light */
+        body[data-theme="monokai-light"] {
+            --bg-gradient: linear-gradient(135deg, #ffe4e6 0%, #fff1f2 50%, #fecdd3 100%);
+            --text-color: #4c0519;
+            --text-muted: #881337;
+            --primary-color: #e11d48;
+            --primary-hover: #be123c;
+            --accent-blue: #e11d48;
+            --sidebar-bg: rgba(255, 255, 255, 0.8);
+            --sidebar-border: rgba(225, 29, 72, 0.3);
+            --card-bg: rgba(255, 255, 255, 0.88);
+            --card-border: rgba(225, 29, 72, 0.2);
+            --item-bg: rgba(225, 29, 72, 0.06);
+            --code-bg: rgba(225, 29, 72, 0.12);
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -15,11 +79,12 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             height: 100vh;
-            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
-            color: #f1f5f9;
+            background: var(--bg-gradient);
+            color: var(--text-color);
             padding: 16px;
             gap: 16px;
-            overflow: hidden; /* Keeps the outer window locked on desktop */
+            overflow: hidden;
+            transition: background 0.4s ease, color 0.4s ease;
         }
 
         /* Toast Notification Styling */
@@ -50,23 +115,21 @@
         /* Windows 11 Mica & Glassy Sidebar Styling */
         .sidebar {
             width: 280px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+            background: var(--sidebar-bg);
             backdrop-filter: blur(25px) saturate(180%);
             -webkit-backdrop-filter: blur(25px) saturate(180%);
             
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
-            border-left: 1px solid rgba(255, 255, 255, 0.20);
+            border: 1px solid var(--sidebar-border);
             border-radius: 16px;
             
-            color: white;
+            color: var(--text-color);
             padding: 24px;
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
             
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), 
-                        0 0 20px rgba(255, 255, 255, 0.04) inset;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
 
         .sidebar h2 {
@@ -74,7 +137,7 @@
             margin-top: 0;
             margin-bottom: 25px;
             padding-bottom: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid var(--sidebar-border);
             letter-spacing: 0.5px;
         }
 
@@ -85,10 +148,10 @@
         .sidebar button {
             width: 100%;
             padding: 14px 16px;
-            margin-bottom: 12px;
-            background: rgba(255, 255, 255, 0.06);
-            color: #e2e8f0;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 10px;
+            background: var(--item-bg);
+            color: var(--text-color);
+            border: 1px solid var(--card-border);
             border-radius: 10px;
             cursor: pointer;
             text-align: left;
@@ -98,17 +161,17 @@
         }
 
         .sidebar button:hover {
-            background: rgba(255, 255, 255, 0.16);
-            border-color: rgba(255, 255, 255, 0.25);
+            background: var(--primary-color);
+            color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
 
         .sidebar button.active {
-            background: #2563eb;
-            border-color: #3b82f6;
+            background: var(--primary-color);
+            border-color: var(--primary-hover);
             color: #ffffff;
-            box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
         }
 
         /* Bottom Pinned Share Button Styling */
@@ -117,15 +180,14 @@
             margin-bottom: 0;
             background: rgba(16, 185, 129, 0.15);
             border-color: rgba(16, 185, 129, 0.3);
-            color: #6ee7b7;
+            color: #10b981;
             text-align: center;
         }
 
         .sidebar button.share-btn:hover {
-            background: rgba(16, 185, 129, 0.3);
-            border-color: rgba(16, 185, 129, 0.5);
+            background: #10b981;
             color: #ffffff;
-            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
         }
 
         /* Main Content Area Styling */
@@ -137,62 +199,67 @@
             margin: 0 auto;
             width: 100%;
             
-            /* Firefox Scrollbar Colour */
             scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.45) rgba(0, 0, 0, 0.25);
+            scrollbar-color: rgba(150, 150, 150, 0.45) rgba(0, 0, 0, 0.1);
         }
 
-        /* Visible Modern Dark Pill Scrollbar for Chrome, Edge, Safari */
         .content::-webkit-scrollbar {
             width: 10px;
         }
 
         .content::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.1);
             border-radius: 20px;
         }
 
         .content::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.45);
+            background: rgba(150, 150, 150, 0.45);
             border-radius: 20px;
             border: 2px solid transparent;
             background-clip: content-box;
         }
 
-        .content::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            border: 2px solid transparent;
-            background-clip: content-box;
+        /* Section Smooth Fade-In & Slide-Up Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .section {
             display: none;
-            background: rgba(15, 23, 42, 0.6);
+            background: var(--card-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             padding: 35px;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
 
         .section.active {
             display: block;
+            animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         /* Accordion Collapsible Styling */
         .faq-item {
             margin-bottom: 16px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--item-bg);
+            border: 1px solid var(--card-border);
             border-radius: 12px;
             overflow: hidden;
             transition: border-color 0.25s ease;
         }
 
         .faq-item:hover {
-            border-color: rgba(255, 255, 255, 0.25);
+            border-color: var(--primary-color);
         }
 
         .faq-question {
@@ -200,7 +267,7 @@
             padding: 18px 20px;
             background: transparent;
             border: none;
-            color: #ffffff;
+            color: var(--text-color);
             font-size: 17px;
             font-weight: 600;
             text-align: left;
@@ -214,7 +281,7 @@
         .faq-question::after {
             content: '＋';
             font-size: 20px;
-            color: #60a5fa;
+            color: var(--primary-color);
             transition: transform 0.3s ease;
         }
 
@@ -228,7 +295,7 @@
             overflow: hidden;
             transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), padding 0.35s ease;
             padding: 0 20px;
-            color: #cbd5e1;
+            color: var(--text-muted);
             line-height: 1.6;
             font-size: 15px;
         }
@@ -250,13 +317,86 @@
             animation: clearBtnTap 0.25s ease-in-out;
         }
 
+        /* Breathing Glow Animation for Download Button */
+        @keyframes greenBreathingGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+            }
+            70% {
+                box-shadow: 0 0 0 16px rgba(16, 185, 129, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+
+        .glowing-download-btn {
+            display: inline-block;
+            background: #10b981;
+            color: #ffffff !important;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 12px;
+            animation: greenBreathingGlow 2s infinite;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .glowing-download-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
+            text-decoration: none;
+        }
+
+        /* Theme Cards Grid */
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .theme-card {
+            background: var(--item-bg);
+            border: 2px solid var(--card-border);
+            border-radius: 14px;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: center;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-card.selected {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+        }
+
+        .theme-preview-box {
+            height: 70px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
         /* Typography & Layout Formatting */
         h1, h2, h3 {
-            color: #ffffff;
+            color: var(--text-color);
         }
 
         h2 {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid var(--card-border);
             padding-bottom: 8px;
             margin-top: 30px;
         }
@@ -264,7 +404,7 @@
         hr {
             border: 0;
             height: 1px;
-            background: rgba(255, 255, 255, 0.15);
+            background: var(--card-border);
             margin: 25px 0;
         }
 
@@ -272,21 +412,21 @@
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-            background: rgba(255, 255, 255, 0.03);
+            background: var(--item-bg);
             border-radius: 10px;
             overflow: hidden;
         }
 
         table th, table td {
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--card-border);
             padding: 12px 16px;
             text-align: left;
         }
 
         table th {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(150, 150, 150, 0.1);
             font-weight: bold;
-            color: #ffffff;
+            color: var(--text-color);
         }
 
         ol li {
@@ -318,7 +458,7 @@
             padding: 16px;
             margin: 20px 0;
             border-radius: 8px;
-            color: #e2e8f0;
+            color: var(--text-muted);
         }
 
         img {
@@ -328,7 +468,7 @@
         }
 
         a {
-            color: #60a5fa;
+            color: var(--accent-blue);
             text-decoration: none;
             font-weight: 500;
         }
@@ -338,11 +478,11 @@
         }
 
         code {
-            background: rgba(255, 255, 255, 0.15);
+            background: var(--code-bg);
             padding: 3px 8px;
             border-radius: 4px;
             font-family: Consolas, monospace;
-            color: #38bdf8;
+            color: var(--accent-blue);
         }
 
         /* 📱 Mobile Responsiveness Media Queries */
@@ -401,7 +541,7 @@
         }
     </style>
 </head>
-<body>
+<body data-theme="zanyon-dark">
 
     <!-- Floating Toast Notification -->
     <div id="toast" class="toast-notification">Copied to clipboard</div>
@@ -415,6 +555,7 @@
             <button id="btn-requirements" onclick="showSection('requirements')">Requirements to Run</button>
             <button id="btn-faq" onclick="showSection('faq')">FAQ & Troubleshooting</button>
             <button id="btn-download" onclick="showSection('download')">Download for Free</button>
+            <button id="btn-theme" onclick="showSection('theme')">🎨 Theme</button>
             <button id="btn-links" onclick="showSection('links')">Links</button>
         </div>
         
@@ -531,7 +672,7 @@
 
         <!-- 2. WHAT'S NEW SECTION -->
         <div id="whatsnew-section" class="section">
-            <p style="font-size: 17px; color: #cbd5e1;">
+            <p style="font-size: 17px;">
                 <em>This release of ZanyonLocker, <strong>v4.0</strong>, is a <strong>very major update</strong> for <strong>ZanyonLocker.</strong></em>
             </p>
 
@@ -553,7 +694,7 @@
 
             <hr>
 
-            <p style="font-size: 16px; color: #e2e8f0; margin-bottom: 25px;">
+            <p style="font-size: 16px; margin-bottom: 25px;">
                 I hope this update helped and you like it because I've taken a lot of time to create v4.0!
             </p>
 
@@ -615,15 +756,15 @@
         <!-- 4. FAQ & TROUBLESHOOTING SECTION -->
         <div id="faq-section" class="section">
             <h1>❓ ZanyonLocker FAQ / Troubleshooting</h1>
-            <p style="color: #cbd5e1; margin-bottom: 20px;">Click on any question below to reveal the answer.</p>
+            <p style="margin-bottom: 20px;">Click on any question below to reveal the answer.</p>
 
             <!-- FAQ Search Bar with Animated Clear Button -->
             <div style="position: relative; margin-bottom: 25px;">
                 <input type="text" id="faq-search" onkeyup="searchFaq()" placeholder="Search FAQ..." 
-                       style="width: 100%; padding: 14px 45px 14px 18px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; color: #ffffff; font-size: 15px; outline: none; transition: border-color 0.25s ease;">
+                       style="width: 100%; padding: 14px 45px 14px 18px; background: var(--item-bg); border: 1px solid var(--card-border); border-radius: 10px; color: var(--text-color); font-size: 15px; outline: none; transition: border-color 0.25s ease;">
                 
                 <button id="clear-search-btn" onclick="clearFaqSearch()" 
-                        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%) scale(0.8); background: rgba(255, 255, 255, 0.1); border: none; color: #cbd5e1; width: 26px; height: 26px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; opacity: 0; pointer-events: none; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);">
+                        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%) scale(0.8); background: rgba(150, 150, 150, 0.2); border: none; color: var(--text-color); width: 26px; height: 26px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; opacity: 0; pointer-events: none; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);">
                     ✕
                 </button>
             </div>
@@ -653,7 +794,7 @@
             </div>
 
             <!-- No Results Message -->
-            <div id="no-faq-results" style="display: none; color: #94a3b8; text-align: center; padding: 20px;">
+            <div id="no-faq-results" style="display: none; text-align: center; padding: 20px;">
                 No matching FAQ topics found.
             </div>
 
@@ -666,21 +807,65 @@
         <!-- 5. DOWNLOAD FOR FREE SECTION -->
         <div id="download-section" class="section">
             <h1>Download for Free</h1>
-            <p style="font-size: 18px; color: #cbd5e1; margin-bottom: 30px;">
+            <p style="font-size: 18px; margin-bottom: 30px;">
                 Download ZanyonLocker latest version securely in a click
             </p>
 
-            <!-- SourceForge Direct Download Button -->
+            <!-- Glowing Emerald Green SourceForge Direct Download Button -->
             <div style="margin-bottom: 25px;">
                 <a href="https://sourceforge.net/projects/zanyonlocker/files/latest/download" 
                    target="_blank" 
-                   style="display: inline-block; background: #ee1c25; color: white; padding: 16px 32px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 10px; box-shadow: 0 4px 15px rgba(238, 28, 37, 0.4); transition: transform 0.2s ease;">
-                   Download Latest Version for Free
+                   class="glowing-download-btn">
+                   📥 Download Latest Version for Free
                 </a>
             </div>
         </div>
 
-        <!-- 6. LINKS SECTION -->
+        <!-- 6. THEME SWITCHER SECTION -->
+        <div id="theme-section" class="section">
+            <h1>🎨 Choose Theme</h1>
+            <p style="margin-bottom: 20px;">Select your preferred look for the site. Your theme choice will be automatically remembered when you reload!</p>
+
+            <div class="theme-grid">
+                <!-- Theme 1: ZanyonUI Dark -->
+                <div id="card-zanyon-dark" class="theme-card" onclick="setTheme('zanyon-dark')">
+                    <div class="theme-preview-box" style="background: linear-gradient(135deg, #0f172a, #1e1b4b); color: #ffffff; border: 1px solid #2563eb;">
+                        ZanyonUI Dark
+                    </div>
+                    <strong>ZanyonUI Dark</strong>
+                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Blue & Soft Dark</p>
+                </div>
+
+                <!-- Theme 2: ZanyonUI Light -->
+                <div id="card-zanyon-light" class="theme-card" onclick="setTheme('zanyon-light')">
+                    <div class="theme-preview-box" style="background: linear-gradient(135deg, #e0f2fe, #ffffff); color: #0f172a; border: 1px solid #2563eb;">
+                        ZanyonUI Light
+                    </div>
+                    <strong>ZanyonUI Light</strong>
+                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Blue & Crisp White</p>
+                </div>
+
+                <!-- Theme 3: Monokai Dark -->
+                <div id="card-monokai-dark" class="theme-card" onclick="setTheme('monokai-dark')">
+                    <div class="theme-preview-box" style="background: linear-gradient(135deg, #18080c, #2c0b14); color: #ffffff; border: 1px solid #e11d48;">
+                        Monokai Dark
+                    </div>
+                    <strong>Monokai Dark</strong>
+                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Crimson & Soft Dark</p>
+                </div>
+
+                <!-- Theme 4: Monokai Light -->
+                <div id="card-monokai-light" class="theme-card" onclick="setTheme('monokai-light')">
+                    <div class="theme-preview-box" style="background: linear-gradient(135deg, #ffe4e6, #ffffff); color: #4c0519; border: 1px solid #e11d48;">
+                        Monokai Light
+                    </div>
+                    <strong>Monokai Light</strong>
+                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Crimson & Crisp White</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. LINKS SECTION -->
         <div id="links-section" class="section">
             <h1>All My Links</h1>
             <p>Check out all of my official links without any crap: <a href="https://linktr.ee/RaidenCorp" target="_blank">Linktree</a></p>
@@ -692,8 +877,9 @@
 
     </div>
 
-    <!-- Script to Handle Section Switching, Accordions, Animated Search Clear, and Custom Toast Sharing -->
+    <!-- JavaScript Logic -->
     <script>
+        // Section Navigation Switcher
         function showSection(sectionId) {
             // Hide all sections
             document.getElementById('readme-section').classList.remove('active');
@@ -701,6 +887,7 @@
             document.getElementById('requirements-section').classList.remove('active');
             document.getElementById('faq-section').classList.remove('active');
             document.getElementById('download-section').classList.remove('active');
+            document.getElementById('theme-section').classList.remove('active');
             document.getElementById('links-section').classList.remove('active');
 
             // Deactivate all buttons
@@ -709,18 +896,21 @@
             document.getElementById('btn-requirements').classList.remove('active');
             document.getElementById('btn-faq').classList.remove('active');
             document.getElementById('btn-download').classList.remove('active');
+            document.getElementById('btn-theme').classList.remove('active');
             document.getElementById('btn-links').classList.remove('active');
 
-            // Show selected section and activate corresponding button
+            // Show selected section and activate button
             document.getElementById(sectionId + '-section').classList.add('active');
             document.getElementById('btn-' + sectionId).classList.add('active');
         }
 
+        // FAQ Accordion Toggle
         function toggleFaq(buttonElement) {
             var item = buttonElement.parentElement;
             item.classList.toggle('active');
         }
 
+        // FAQ Search Filter
         function searchFaq() {
             var inputElement = document.getElementById("faq-search");
             var input = inputElement.value.toLowerCase();
@@ -728,7 +918,6 @@
             var clearBtn = document.getElementById("clear-search-btn");
             var visibleCount = 0;
 
-            // Show or hide the clear (X) button with smooth scale & fade
             if (input.length > 0) {
                 clearBtn.style.opacity = "1";
                 clearBtn.style.pointerEvents = "auto";
@@ -739,7 +928,6 @@
                 clearBtn.style.transform = "translateY(-50%) scale(0.8)";
             }
 
-            // Filter FAQ items
             items.forEach(function(item) {
                 var text = item.innerText.toLowerCase();
                 if (text.includes(input)) {
@@ -750,7 +938,6 @@
                 }
             });
 
-            // Handle "No results" message
             var noResults = document.getElementById("no-faq-results");
             if (visibleCount === 0) {
                 noResults.style.display = "block";
@@ -759,22 +946,22 @@
             }
         }
 
+        // Clear FAQ Search
         function clearFaqSearch() {
             var clearBtn = document.getElementById("clear-search-btn");
             var searchInput = document.getElementById("faq-search");
 
-            // Play tap animation
             clearBtn.classList.add("clear-btn-active");
             setTimeout(function() {
                 clearBtn.classList.remove("clear-btn-active");
             }, 250);
 
-            // Clear text and refresh list
             searchInput.value = "";
             searchFaq();
             searchInput.focus();
         }
 
+        // Toast Notification Function
         var toastTimeout;
         function shareWebsite() {
             var websiteUrl = "https://raidencorporation.github.io/ZanyonLocker/";
@@ -796,6 +983,43 @@
                 toast.classList.remove("show");
             }, 2500);
         }
+
+        // Dynamic Theme Switcher System
+        function setTheme(themeName) {
+            document.body.setAttribute('data-theme', themeName);
+            localStorage.setItem('zanyon_theme', themeName);
+
+            // Update Theme Card Selection UI
+            var cards = document.querySelectorAll('.theme-card');
+            cards.forEach(function(card) {
+                card.classList.remove('selected');
+            });
+
+            var activeCard = document.getElementById('card-' + themeName);
+            if (activeCard) {
+                activeCard.classList.add('selected');
+            }
+        }
+
+        // Auto Detect System Theme or Load Saved Preference on Page Load
+        function initTheme() {
+            var savedTheme = localStorage.getItem('zanyon_theme');
+            
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                // Auto detect system light/dark mode preference
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (prefersDark) {
+                    setTheme('zanyon-dark');
+                } else {
+                    setTheme('zanyon-light');
+                }
+            }
+        }
+
+        // Initialize Theme on Page Load
+        initTheme();
     </script>
 
 </body>
