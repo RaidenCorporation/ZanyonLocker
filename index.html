@@ -19,7 +19,7 @@
             color: #f1f5f9;
             padding: 16px;
             gap: 16px;
-            overflow: hidden; /* Keeps the outer window locked */
+            overflow: hidden; /* Keeps the outer window locked on desktop */
         }
 
         /* Toast Notification Styling */
@@ -333,66 +333,61 @@
             font-family: Consolas, monospace;
             color: #38bdf8;
         }
-        /* Mobile Responsiveness Rules */
-@media (max-width: 768px) {
-    body {
-        flex-direction: column !important;
-        height: auto !important;
-        min-height: 100vh !important;
-        overflow-y: auto !important;
-        padding: 12px !important;
-        gap: 16px !important;
-    }
 
-    .sidebar {
-        width: 100% !important;
-        height: auto !important;
-        padding: 20px 16px !important;
-    }
+        /* 📱 Mobile Responsiveness Media Queries */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column !important;
+                height: auto !important;
+                min-height: 100vh !important;
+                overflow-y: auto !important;
+                padding: 12px !important;
+                gap: 12px !important;
+            }
 
-    .sidebar h2 {
-        font-size: 20px !important;
-        margin-bottom: 16px !important;
-        text-align: center !important;
-    }
+            .sidebar {
+                width: 100% !important;
+                height: auto !important;
+                padding: 16px !important;
+            }
 
-    .nav-buttons {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 8px !important;
-    }
+            .sidebar h2 {
+                font-size: 20px !important;
+                margin-bottom: 16px !important;
+                text-align: center !important;
+            }
 
-    .sidebar button {
-        margin-bottom: 0 !important;
-        padding: 12px 14px !important;
-        font-size: 14px !important;
-    }
+            .nav-buttons {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 8px !important;
+            }
 
-    .sidebar button.share-btn {
-        margin-top: 12px !important;
-    }
+            .sidebar button {
+                margin-bottom: 0 !important;
+                padding: 12px 14px !important;
+                font-size: 14px !important;
+            }
 
-    .content {
-        padding: 0 !important;
-        max-width: 100% !important;
-        overflow: visible !important;
-    }
+            .sidebar button.share-btn {
+                margin-top: 12px !important;
+            }
 
-    .section {
-        padding: 20px 16px !important;
-    }
+            .content {
+                padding: 0 !important;
+                max-width: 100% !important;
+                overflow: visible !important;
+            }
 
-    table th, table td {
-        padding: 8px 10px !important;
-        font-size: 13px !important;
-    }
+            .section {
+                padding: 20px 16px !important;
+            }
 
-    /* Fix image width on small screens */
-    img {
-        max-width: 100% !important;
-        height: auto !important;
-    }
-}
+            table th, table td {
+                padding: 8px 10px !important;
+                font-size: 13px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -609,7 +604,13 @@
         <!-- 4. FAQ & TROUBLESHOOTING SECTION -->
         <div id="faq-section" class="section">
             <h1>❓ ZanyonLocker FAQ / Troubleshooting</h1>
-            <p style="color: #cbd5e1; margin-bottom: 25px;">Click on any question below to reveal the answer.</p>
+            <p style="color: #cbd5e1; margin-bottom: 20px;">Click on any question below to reveal the answer.</p>
+
+            <!-- FAQ Search Bar -->
+            <div style="margin-bottom: 25px;">
+                <input type="text" id="faq-search" onkeyup="searchFaq()" placeholder="🔍 Search FAQ & Troubleshooting..." 
+                       style="width: 100%; padding: 14px 18px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 10px; color: #ffffff; font-size: 15px; outline: none; transition: border-color 0.25s ease;">
+            </div>
 
             <!-- Question 1 -->
             <div class="faq-item">
@@ -633,6 +634,11 @@
                 <div class="faq-answer">
                     <p>If you lose your master key password for ZanyonLocker, <strong>there is absolutely no guarantee or way that you can get your file back.</strong> If you really need your file back and you lost your password to the file or forgot it, you can try looking if the master key file went into the Recycle Bin or if you hid it in File Explorer. Otherwise, there is no way to get your file back.</p>
                 </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-faq-results" style="display: none; color: #94a3b8; text-align: center; padding: 20px;">
+                No matching FAQ topics found.
             </div>
 
             <hr>
@@ -670,7 +676,7 @@
 
     </div>
 
-    <!-- Script to Handle Section Switching, Accordions, and Custom Toast Sharing -->
+    <!-- Script to Handle Section Switching, Accordions, Search, and Custom Toast Sharing -->
     <script>
         function showSection(sectionId) {
             // Hide all sections
@@ -697,6 +703,29 @@
         function toggleFaq(buttonElement) {
             var item = buttonElement.parentElement;
             item.classList.toggle('active');
+        }
+
+        function searchFaq() {
+            var input = document.getElementById("faq-search").value.toLowerCase();
+            var items = document.querySelectorAll(".faq-item");
+            var visibleCount = 0;
+
+            items.forEach(function(item) {
+                var text = item.innerText.toLowerCase();
+                if (text.includes(input)) {
+                    item.style.display = "block";
+                    visibleCount++;
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            var noResults = document.getElementById("no-faq-results");
+            if (visibleCount === 0) {
+                noResults.style.display = "block";
+            } else {
+                noResults.style.display = "none";
+            }
         }
 
         var toastTimeout;
