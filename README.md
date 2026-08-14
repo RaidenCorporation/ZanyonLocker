@@ -4,11 +4,17 @@
 
 ---
 
+🔗 Official Website (Best of both worlds, SourceForge & GitHub): https://raidencorporation.github.io/ZanyonLocker
+
+---
+
 
 ## 🔐 **Security**
 
 ZanyonLocker™ uses AES-256 (Advanced Encryption Standard) to securely encrypt your data for privacy.
+
 ---
+
 ## 🛡 **How To Use ZanyonLocker™**
 
 To encrypt your first file using ZanyonLocker™, follow these steps in order. First, run the zl_setup.exe installer to set up ZanyonLocker™ on your PC, then open the application from your Start Menu, Desktop shortcut or by right-clicking a file in Windows Explorer.
@@ -86,11 +92,14 @@ ZanyonLocker™ will not be used for **unethical reasons**, such as hacking. Use
 
 **SourceForge Version:** https://sourceforge.net/p/zanyonlocker
 
-**ZanyonLocker™ Code · Malware-free Proof:** https://github.com/RaidenCorporation/ZanyonLocker/blob/main/zl-code-safety-proof.txt
+**ZanyonLocker Code · Malware-free Proof:** https://github.com/RaidenCorporation/ZanyonLocker/blob/main/zl-code-safety-proof.txt
 
 **Other Projects · Profile:** https://github.com/RaidenCorporation
 
 **YouTube Videos & Tutorials:** https://youtube.com/@RaidenCorporation
+
+**ZanyonLocker Website:**
+https://raidencorporation.github.io/ZanyonLocker
 
  
 
