@@ -3,274 +3,641 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZanyonLocker - Official Site</title>
+    <title>ZanyonLocker - Raiden Corporation</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    
     <style>
+        /* CSS Theme Custom Variables */
         :root {
-            --bg-color: #0f172a;
-            --text-color: #f8fafc;
-            --card-bg: #1e293b;
-            --card-border: #334155;
-            --item-bg: #0f172a;
-            --accent-color: #2563eb;
-            --accent-hover: #1d4ed8;
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            --text-color: #f1f5f9;
+            --text-muted: #cbd5e1;
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent-blue: #38bdf8;
+            --sidebar-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+            --sidebar-border: rgba(255, 255, 255, 0.14);
+            --card-bg: rgba(15, 23, 42, 0.6);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --item-bg: rgba(255, 255, 255, 0.04);
+            --code-bg: rgba(255, 255, 255, 0.15);
         }
 
-        [data-theme="zanyon-light"] {
-            --bg-color: #f8fafc;
+        /* 1. ZanyonUI Light */
+        body[data-theme="zanyon-light"] {
+            --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #dbeafe 100%);
             --text-color: #0f172a;
-            --card-bg: #ffffff;
-            --card-border: #e2e8f0;
-            --item-bg: #f1f5f9;
-            --accent-color: #2563eb;
-            --accent-hover: #1d4ed8;
+            --text-muted: #334155;
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent-blue: #0284c7;
+            --sidebar-bg: rgba(255, 255, 255, 0.75);
+            --sidebar-border: rgba(37, 99, 235, 0.25);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-border: rgba(37, 99, 235, 0.2);
+            --item-bg: rgba(37, 99, 235, 0.05);
+            --code-bg: rgba(37, 99, 235, 0.12);
         }
 
-        [data-theme="monokai-dark"] {
-            --bg-color: #18080c;
-            --text-color: #f8fafc;
-            --card-bg: #2c0b14;
-            --card-border: #4c0519;
-            --item-bg: #18080c;
-            --accent-color: #e11d48;
-            --accent-hover: #be123c;
+        /* 2. Monokai Dark */
+        body[data-theme="monokai-dark"] {
+            --bg-gradient: linear-gradient(135deg, #18080c 0%, #2c0b14 50%, #0f172a 100%);
+            --text-color: #f1f5f9;
+            --text-muted: #cbd5e1;
+            --primary-color: #e11d48;
+            --primary-hover: #be123c;
+            --accent-blue: #fb7185;
+            --sidebar-bg: linear-gradient(135deg, rgba(225, 29, 72, 0.12) 0%, rgba(255, 255, 255, 0.03) 100%);
+            --sidebar-border: rgba(225, 29, 72, 0.25);
+            --card-bg: rgba(28, 12, 18, 0.7);
+            --card-border: rgba(225, 29, 72, 0.15);
+            --item-bg: rgba(255, 255, 255, 0.04);
+            --code-bg: rgba(225, 29, 72, 0.2);
         }
 
-        [data-theme="monokai-light"] {
-            --bg-color: #fff1f2;
+        /* 3. Monokai Light */
+        body[data-theme="monokai-light"] {
+            --bg-gradient: linear-gradient(135deg, #ffe4e6 0%, #fff1f2 50%, #fecdd3 100%);
             --text-color: #4c0519;
-            --card-bg: #ffffff;
-            --card-border: #ffe4e6;
-            --item-bg: #fff1f2;
-            --accent-color: #e11d48;
-            --accent-hover: #be123c;
+            --text-muted: #881337;
+            --primary-color: #e11d48;
+            --primary-hover: #be123c;
+            --accent-blue: #e11d48;
+            --sidebar-bg: rgba(255, 255, 255, 0.8);
+            --sidebar-border: rgba(225, 29, 72, 0.3);
+            --card-bg: rgba(255, 255, 255, 0.88);
+            --card-border: rgba(225, 29, 72, 0.2);
+            --item-bg: rgba(225, 29, 72, 0.06);
+            --code-bg: rgba(225, 29, 72, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
             margin: 0;
-            padding: 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .nav-bar {
+            font-family: 'Fluent Emoji', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 25px;
-            border-bottom: 1px solid var(--card-border);
-            padding-bottom: 15px;
+            height: 100vh;
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            padding: 16px;
+            gap: 16px;
+            overflow: hidden;
+            transition: background 0.4s ease, color 0.4s ease;
         }
 
-        .nav-btn {
+        /* Toast Notification Styling */
+        .toast-notification {
+            position: fixed;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #1c1c1e;
+            color: #f1f5f9;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 9999;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .toast-notification.show {
+            top: 24px;
+            opacity: 1;
+        }
+
+        /* Windows 11 Mica & Glassy Sidebar Styling */
+        .sidebar {
+            width: 280px;
+            background: var(--sidebar-bg);
+            backdrop-filter: blur(25px) saturate(180%);
+            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            
+            border: 1px solid var(--sidebar-border);
+            border-radius: 16px;
+            
+            color: var(--text-color);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+            transition: background 0.4s ease, border-color 0.4s ease;
+        }
+
+        .sidebar h2 {
+            font-size: 22px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--sidebar-border);
+            letter-spacing: 0.5px;
+        }
+
+        .nav-buttons {
+            flex: 1;
+        }
+
+        .sidebar button {
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 10px;
             background: var(--item-bg);
             color: var(--text-color);
             border: 1px solid var(--card-border);
-            padding: 10px 18px;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
+            text-align: left;
+            font-size: 15px;
             font-weight: 600;
-            transition: all 0.2s ease;
+            transition: all 0.25s ease;
         }
 
-        .nav-btn:hover {
-            border-color: var(--accent-color);
-        }
-
-        .nav-btn.active {
-            background: var(--accent-color);
+        .sidebar button:hover {
+            background: var(--primary-color);
             color: #ffffff;
-            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar button.active {
+            background: var(--primary-color);
+            border-color: var(--primary-hover);
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Bottom Pinned Share Button Styling */
+        .sidebar button.share-btn {
+            margin-top: auto;
+            margin-bottom: 0;
+            background: rgba(16, 185, 129, 0.15);
+            border-color: rgba(16, 185, 129, 0.3);
+            color: #10b981;
+            text-align: center;
+        }
+
+        .sidebar button.share-btn:hover {
+            background: #10b981;
+            color: #ffffff;
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Main Content Area Styling */
+        .content {
+            flex: 1;
+            padding: 24px 30px 24px 40px;
+            overflow-y: auto;
+            max-width: 950px;
+            margin: 0 auto;
+            width: 100%;
+            
+            scrollbar-width: thin;
+            scrollbar-color: rgba(150, 150, 150, 0.45) rgba(0, 0, 0, 0.1);
+        }
+
+        .content::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .content::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+
+        .content::-webkit-scrollbar-thumb {
+            background: rgba(150, 150, 150, 0.45);
+            border-radius: 20px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        /* Section Smooth Fade-In & Slide-Up Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(14px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .section {
             display: none;
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+            transition: background 0.4s ease, border-color 0.4s ease;
         }
 
         .section.active {
             display: block;
+            animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
-        a {
-            color: var(--accent-color);
+        /* Accordion Collapsible Styling */
+        .faq-item {
+            margin-bottom: 16px;
+            background: var(--item-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.25s ease;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 18px 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-color);
+            font-size: 17px;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+        }
+
+        .faq-question::after {
+            content: '＋';
+            font-size: 20px;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '－';
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0, 1, 0, 1), padding 0.35s ease;
+            padding: 0 20px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 20px 20px 20px;
+            transition: max-height 0.5s ease-in-out, padding 0.35s ease;
+        }
+
+        /* FAQ Search Clear Button Click Pulse Animation */
+        @keyframes clearBtnTap {
+            0% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(0.75); }
+            100% { transform: translateY(-50%) scale(1); }
+        }
+
+        .clear-btn-active {
+            animation: clearBtnTap 0.25s ease-in-out;
+        }
+
+        /* Breathing Glow Animation for Download Button */
+        @keyframes greenBreathingGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+            }
+            70% {
+                box-shadow: 0 0 0 16px rgba(16, 185, 129, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+            }
+        }
+
+        .glowing-download-btn {
+            display: inline-block;
+            background: #10b981;
+            color: #ffffff !important;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 12px;
+            animation: greenBreathingGlow 2s infinite;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .glowing-download-btn:hover {
+            background: #059669;
+            transform: translateY(-2px);
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
+        /* Theme Cards Grid */
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
         }
 
-        .info-box, .disclaimer-box {
+        .theme-card {
             background: var(--item-bg);
-            border-left: 4px solid var(--accent-color);
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
+            border: 2px solid var(--card-border);
+            border-radius: 14px;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-align: center;
         }
 
-        .disclaimer-box {
-            border-left-color: #eab308;
+        .theme-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary-color);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-card.selected {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+        }
+
+        .theme-preview-box {
+            height: 70px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Typography & Layout Formatting */
+        h1, h2, h3 {
+            color: var(--text-color);
+        }
+
+        h2 {
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 8px;
+            margin-top: 30px;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--card-border);
+            margin: 25px 0;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
-        }
-
-        th, td {
-            border: 1px solid var(--card-border);
-            padding: 12px;
-            text-align: left;
-        }
-
-        th {
             background: var(--item-bg);
-        }
-
-        .faq-item {
-            margin-bottom: 12px;
-            border: 1px solid var(--card-border);
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
         }
 
-        .faq-question {
-            width: 100%;
+        table th, table td {
+            border: 1px solid var(--card-border);
+            padding: 12px 16px;
             text-align: left;
-            background: var(--item-bg);
+        }
+
+        table th {
+            background: rgba(150, 150, 150, 0.1);
+            font-weight: bold;
             color: var(--text-color);
-            border: none;
-            padding: 15px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
         }
 
-        .faq-answer {
-            display: none;
-            padding: 15px;
-            background: var(--card-bg);
-            border-top: 1px solid var(--card-border);
+        ol li {
+            margin-bottom: 12px;
+            line-height: 1.6;
         }
 
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        .glowing-download-btn {
-            display: inline-block;
-            background: #10b981;
-            color: #ffffff;
-            padding: 16px 32px;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 10px;
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .glowing-download-btn:hover {
-            background: #059669;
-            box-shadow: 0 0 25px rgba(16, 185, 129, 0.7);
-            text-decoration: none;
-        }
-
-        .theme-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .theme-card {
-            border: 2px solid var(--card-border);
-            border-radius: 10px;
-            padding: 15px;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-
-        .theme-card:hover, .theme-card.selected {
-            border-color: var(--accent-color);
-        }
-
-        .theme-preview-box {
-            height: 60px;
-            border-radius: 6px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        #toast {
-            visibility: hidden;
-            min-width: 200px;
-            background-color: var(--accent-color);
-            color: #fff;
-            text-align: center;
+        .pro-tip {
+            background: rgba(234, 179, 8, 0.15);
+            border-left: 4px solid #eab308;
+            padding: 16px;
+            margin: 20px 0;
             border-radius: 8px;
-            padding: 12px;
-            position: fixed;
-            z-index: 1000;
-            left: 50%;
-            bottom: 30px;
-            transform: translateX(-50%);
-            opacity: 0;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
+            color: #fef08a;
         }
 
-        #toast.show {
-            visibility: visible;
-            opacity: 1;
+        .disclaimer-box {
+            background: rgba(239, 68, 68, 0.15);
+            border-left: 4px solid #ef4444;
+            color: #fca5a5;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 8px;
         }
 
-        blockquote {
-            background: var(--item-bg);
-            border-left: 4px solid var(--accent-color);
-            margin: 15px 0;
-            padding: 12px 18px;
-            border-radius: 0 8px 8px 0;
+        .info-box {
+            background: rgba(148, 163, 184, 0.15);
+            border-left: 4px solid #94a3b8;
+            padding: 16px;
+            margin: 20px 0;
+            border-radius: 8px;
+            color: var(--text-muted);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        code {
+            background: var(--code-bg);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            color: var(--accent-blue);
+        }
+
+        /* Mobile Responsiveness Media Queries */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column !important;
+                height: auto !important;
+                min-height: 100vh !important;
+                overflow-y: auto !important;
+                padding: 12px !important;
+                gap: 12px !important;
+            }
+
+            .sidebar {
+                width: 100% !important;
+                height: auto !important;
+                padding: 16px !important;
+            }
+
+            .sidebar h2 {
+                font-size: 20px !important;
+                margin-bottom: 16px !important;
+                text-align: center !important;
+            }
+
+            .nav-buttons {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 8px !important;
+            }
+
+            .sidebar button {
+                margin-bottom: 0 !important;
+                padding: 12px 14px !important;
+                font-size: 14px !important;
+            }
+
+            .sidebar button.share-btn {
+                margin-top: 12px !important;
+            }
+
+            .content {
+                padding: 0 !important;
+                max-width: 100% !important;
+                overflow: visible !important;
+            }
+
+            .section {
+                padding: 20px 16px !important;
+            }
+
+            table th, table td {
+                padding: 8px 10px !important;
+                font-size: 13px !important;
+            }
         }
     </style>
 </head>
-<body>
+<body data-theme="zanyon-dark">
 
-    <div id="toast">Copied to clipboard</div>
+    <!-- Floating Toast Notification -->
+    <div id="toast" class="toast-notification">Copied to clipboard</div>
 
-    <div class="container">
-        <!-- Navigation Buttons -->
-        <div class="nav-bar">
-            <button id="btn-readme" class="nav-btn active" onclick="showSection('readme')">README</button>
-            <button id="btn-whatsnew" class="nav-btn" onclick="showSection('whatsnew')">What's New</button>
-            <button id="btn-requirements" class="nav-btn" onclick="showSection('requirements')">Requirements</button>
-            <button id="btn-faq" class="nav-btn" onclick="showSection('faq')">FAQ / Troubleshooting</button>
-            <button id="btn-download" class="nav-btn" onclick="showSection('download')">Download for Free</button>
-            <button id="btn-theme" class="nav-btn" onclick="showSection('theme')">Choose Theme</button>
-            <button id="btn-links" class="nav-btn" onclick="showSection('links')">Links</button>
-            <button id="btn-shop" class="nav-btn" onclick="showSection('shop')">Shop (coming soon)</button>
+    <!-- Floating Mica & Glass Sidebar -->
+    <div class="sidebar">
+        <h2>ZanyonLocker™</h2>
+        <div class="nav-buttons">
+            <button id="btn-readme" class="active" onclick="showSection('readme')">Readme & Instructions</button>
+            <button id="btn-whatsnew" onclick="showSection('whatsnew')">What's new in the latest version</button>
+            <button id="btn-requirements" onclick="showSection('requirements')">Requirements to Run</button>
+            <button id="btn-faq" onclick="showSection('faq')">FAQ & Troubleshooting</button>
+            <button id="btn-download" onclick="showSection('download')">Download for Free</button>
+            <button id="btn-theme" onclick="showSection('theme')">Theme</button>
+            <button id="btn-links" onclick="showSection('links')">Links</button>
         </div>
+        
+        <!-- Pinned Bottom Share Button -->
+        <button id="btn-share" class="share-btn" onclick="shareWebsite()">🔗 Share Website</button>
+    </div>
 
-        <!-- 1. README SECTION -->
+    <!-- Main Content Area -->
+    <div class="content">
+
+        <!-- 1. README & INSTRUCTIONS SECTION -->
         <div id="readme-section" class="section active">
-            <h1>ZanyonLocker</h1>
-            <p>ZanyonLocker™ is a lightweight, privacy-focused file encryption tool designed to secure your personal data with robust AES encryption.</p>
+            <p><img src="https://github.com/user-attachments/assets/1cc909a1-ac19-4597-b94f-7dc50db91faa" alt="zl" width="802" height="322"></p>
+            
+<h3><em>ZanyonLocker is a safe encryption tool made by Raiden Corporation. It is used to encrypt files over a secure process.</em></h3>
+
+            <hr>
+
+            <p><strong>🔗 Official Website (Best of both worlds, SourceForge &amp; GitHub):</strong> <a href="https://raidencorporation.github.io/ZanyonLocker" target="_blank">https://raidencorporation.github.io/ZanyonLocker</a></p>
+
+            <hr>
+
+            <h2>🔐 <strong>Security</strong></h2>
+            <p>ZanyonLocker uses AES-256 (Advanced Encryption Standard) to securely encrypt your data for privacy.</p>
+
+            <hr>
+
+            <h2>🖥️ <strong>User Interface</strong></h2>
+            <p>ZanyonLocker runs on the user interface named ZanyonUI. It is a modern type of UI that uses Mica/Aero effects and glass effects with smooth animations and fluid colours. It is a UI, not a framework!</p>
+            <p><strong>Latest ZanyonUI version:</strong> ZanyonUI 1.0 Beta (in ZanyonLocker v4.0), ZanyonUI 1.0 will be in ZanyonLocker v5.0.</p>
+
+            <hr>
+
+            <h2>🛡 <strong>How To Use ZanyonLocker</strong></h2>
+            <p>To encrypt your first file using ZanyonLocker, follow these steps in order. First, run the <code>zl_setup.exe</code> installer to set up ZanyonLocker on your PC, then open the application from your Start Menu, Desktop shortcut or by right-clicking a file in Windows Explorer.</p>
+            <p>When the main window opens, you will see three main steps. First, click <strong>Set up a password</strong>. A window will pop up asking you to enter a password only YOU know.</p>
+            <p>After setting your password, you can proceed to the second step: <strong>Encrypt a file</strong>. When prompted, enter the password you created. A File Explorer window will pop up allowing you to select any file or folder to encrypt. Once selected, the file will be encrypted and given a <code>.zanyon</code> extension (eg <code>secret.txt</code> » <code>secret.txt.zanyon</code>).</p>
+            <p>To decrypt a file, open ZanyonLocker and click <strong>Decrypt a file</strong>. Enter your password when prompted, select the encrypted <code>.zanyon</code> file in the File Explorer window, and it will be restored to its original state (eg <code>secret.txt.zanyon</code> » <code>secret.txt</code>). You can also configure app preferences, toggle dark mode or check for live updates directly from the Settings gear icon in the top-left header.</p>
+
+            <p><img src="https://i.imgur.com/Fd8QUmG.png" alt=".zanyon File Extension Icon by Raiden Bisnath (Raiden Corporation)"></p>
+
+            <div class="pro-tip">
+                💡 <strong>Pro Tip:</strong> ZanyonLocker keeps the original file for safety. To ensure total privacy, <strong>manually delete the original file</strong> <em>after</em> you see the <code>.zanyon</code> version created. This method is used for backup purposes.
+            </div>
+
+            <hr>
+
+            <h2>💻 <strong>Minimum System Requirements</strong></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Requirement</th>
+                        <th>Minimum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Operating System</strong></td>
+                        <td>Windows 10 22H2</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Processor (CPU)</strong></td>
+                        <td>Intel® Core™ i3</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memory (RAM)</strong></td>
+                        <td>4.00 GB RAM</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Storage</strong></td>
+                        <td>2MB Free Space</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Architecture</strong></td>
+                        <td>x64 (64-bit)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><em>Note: These are minimum requirements, meaning, for example it says at least Windows 10, 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all Requirements, then ZanyonLocker will run perfectly. More Space = Faster Encryption.</em></p>
 
             <hr>
 
@@ -324,47 +691,43 @@
             <p><em>Project Created By:</em> Raiden Corporation</p>
             <p><strong>Copyright © Raiden Corporation 2026.</strong></p>
         </div>
-
         <!-- 2. WHAT'S NEW SECTION -->
         <div id="whatsnew-section" class="section">
             <p style="font-size: 17px;">
-                <em>This release of ZanyonLocker, <strong>v4.0</strong></em>, was meant to be a <strong>major update</strong> for <strong>ZanyonLocker</strong> but I had to rush in one day and it was <strong>minor instead.</strong>
-            </p>
+<p><em>This release of ZanyonLocker, <strong>v4.0</strong></em>, was meant to be a <strong>major update</strong> for <strong>ZanyonLocker</strong> but I had to rush in one day and it was <strong>minor instead.</strong></p>
 
-            <hr>
+<hr>
 
-            <h2>🔵 What's new</h2>
-            <ol style="padding-left: 20px;">
-                <li><strong>New and improved UI:</strong> Instead of a generic UI, I have officially launched ZanyonUI 1.0 Beta, which is the official UI for ZanyonLocker starting from ZanyonLocker v4.0 which doesn't have a difference from v3.0's UI, but ZanyonLocker v5.0 will have the new ZanyonUI 1.0 with Aero/Mica glass transparency effects, animations etc.</li>
-                <li><strong>New buttons:</strong> There is now a Settings button where you can configure settings for the ZanyonLocker app and view the details such as the ZanyonLocker version and the developer.</li>
-                <li><strong>Button change (minor):</strong> I have changed the Master key setup button to '<strong>Set up a password</strong>' to make it easier and more modern speaking.</li>
-                <li><strong>Check for updates button:</strong> Now you can easily check for updates if there's a new ZanyonLocker release. If you are running an outdated version, it will tell you a new version is available and it will give you a download button. If you are running the latest version, it will tell you that you are running the latest.</li>
-                <li><strong>New Setup (credits to Inno Setup):</strong> Now, you finish a setup which lets you pick what you want to install with the ZanyonLocker app (eg Create a desktop shortcut) and then when it's finished, it launches the ZanyonLocker app for you. The setup is named <code>zl_setup.exe</code>.</li>
-            </ol>
+<h2>🔵 What's new</h2>
+<ol style="padding-left: 20px;">
+    <li><strong>New and improved UI:</strong> Instead of a generic UI, I have officially launched ZanyonUI 1.0 Beta, which is the official UI for ZanyonLocker starting from ZanyonLocker v4.0 which doesn't have a difference from v3.0's UI, but ZanyonLocker v5.0 will have the new ZanyonUI 1.0 with Aero/Mica glass transparency effects, animations etc.</li>
+    <li><strong>New buttons:</strong> There is now a Settings button where you can configure settings for the ZanyonLocker app and view the details such as the ZanyonLocker version and the developer.</li>
+    <li><strong>Button change (minor):</strong> I have changed the Master key setup button to '<strong>Set up a password</strong>' to make it easier and more modern speaking.</li>
+    <li><strong>Check for updates button:</strong> Now you can easily check for updates if there's a new ZanyonLocker release. If you are running an outdated version, it will tell you a new version is available and it will give you a download button. If you are running the latest version, it will tell you that you are running the latest.</li>
+    <li><strong>New Setup (credits to Inno Setup):</strong> Now, you finish a setup which lets you pick what you want to install with the ZanyonLocker app (eg Create a desktop shortcut) and then when it's finished, it launches the ZanyonLocker app for you. The setup is named <code>zl_setup.exe</code>.</li>
+</ol>
 
-            <hr>
+<hr>
 
-            <h2>🟡 Unreleased features (in development for v5.0/v6.0)</h2>
-            <p><strong>CM (Compression Mode):</strong> This feature is currently not available and is in development. This will be available in v5.0 or v6.0, the next major update.</p>
+<h2>🟡 Unreleased features (in development for v5.0/v6.0)</h2>
+<p><strong>CM (Compression Mode):</strong> This feature is currently not available and is in development. This will be available in v5.0 or v6.0, the next major update.</p>
 
-            <hr>
+<hr>
 
-            <p style="font-size: 16px; margin-bottom: 25px;">
-                I hope this update helped and you like it even though I wasted a lot of time to make v4.0!
-            </p>
+<p style="font-size: 16px; margin-bottom: 25px;">
+    I hope this update helped and you like it even though I wasted a lot of time to make v4.0!
+</p>
 
-            <p>
-                <a href="https://sourceforge.net/projects/zanyonlocker/files/v4.0z1.0/zl_setup.exe/download" target="_blank">
-                    <img src="https://a.fsdn.com/con/app/sf-download-button" alt="Download ZanyonLocker">
-                </a>
-            </p>
-            <div>
-                <a href="https://sourceforge.net/projects/zanyonlocker/files/v4.0z1.0/zl_setup.exe/download" target="_blank">
-                    <img src="https://a.fsdn.com/con/app/sf-download-button" alt="Download ZanyonLocker">
-                </a>
-            </div>
-        </div>
-
+<p>
+    <a href="https://sourceforge.net/projects/zanyonlocker/files/v4.0z1.0/zl_setup.exe/download" target="_blank">
+        <img src="https://a.fsdn.com/con/app/sf-download-button" alt="Download ZanyonLocker">
+    </a>
+</p>
+<div>
+    <a href="https://sourceforge.net/projects/zanyonlocker/files/v4.0z1.0/zl_setup.exe/download" target="_blank">
+        <img src="https://a.fsdn.com/con/app/sf-download-button" alt="Download ZanyonLocker">
+    </a>
+</div>
         <!-- 3. REQUIREMENTS TO RUN SECTION -->
         <div id="requirements-section" class="section">
             <h2>💻 <strong>Minimum System Requirements</strong></h2>
@@ -476,7 +839,7 @@
                 <a href="https://sourceforge.net/projects/zanyonlocker/files/latest/download" 
                    target="_blank" 
                    class="glowing-download-btn">
-                    Download Latest Version for Free
+                   Download Latest Version for Free
                 </a>
             </div>
         </div>
@@ -535,14 +898,14 @@
             <p>Download my free media from Pixabay: <a href="https://pixabay.com/users/raidencorporation-53407453" target="_blank">Pixabay</a></p>
         </div>
 
-        <!-- 8. SHOP SECTION -->
-        <div id="shop-section" class="section">
-            <h1>Raiden Corporation Shop</h1>
-            <blockquote>
-                <p>Shop isn't out right now, maybe check back in if its released in a few weeks...?</p>
-                <p>Shop is arriving soon!</p>
-            </blockquote>
-        </div>
+            <!-- 8. SHOP SECTION -->
+<div id="shop-section" class="section">
+    <h1>Raiden Corporation Shop</h1>
+    <blockquote>
+        <p>Shop isn't out right now, maybe check back in if its released in a few weeks...?</p>
+        <p>Shop is arriving soon!</p>
+    </blockquote>
+</div>
 
     </div>
 
