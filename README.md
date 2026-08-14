@@ -4,7 +4,7 @@
 
 ---
 
-🔗 Official Website (Best of both worlds, SourceForge & GitHub): https://raidencorporation.github.io/ZanyonLocker
+**🔗 Official Website (Best of both worlds, SourceForge & GitHub):** https://raidencorporation.github.io/ZanyonLocker
 
 ---
 
@@ -15,7 +15,14 @@ ZanyonLocker™ uses AES-256 (Advanced Encryption Standard) to securely encrypt 
 
 ---
 
-## 🛡 **How To Use ZanyonLocker™**
+## 🖥️ User Interface
+ZanyonLocker runs on the user interface named ZanyonUI. It is a modern type of UI that uses Mica/Aero effects and glass effects with smooth animations and fluid colours. It is a UI, not a framework!
+
+**Latest ZanyonUI version:** ZanyonUI 1.0 Beta (in ZanyonLocker v4.0), ZanyonUI 1.0 will be in ZanyonLocker v5.0.
+
+---
+
+## 🛡 **How To Use ZanyonLocker**
 
 To encrypt your first file using ZanyonLocker™, follow these steps in order. First, run the zl_setup.exe installer to set up ZanyonLocker™ on your PC, then open the application from your Start Menu, Desktop shortcut or by right-clicking a file in Windows Explorer.
 When the main window opens, you will see three main steps. First, click Set up a password. A window will pop up asking you to enter a password only YOU know.
