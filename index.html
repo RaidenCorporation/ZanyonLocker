@@ -84,6 +84,30 @@
             text-align: center;
         }
 
+        .nav-btn {
+            padding: 12px 16px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-color);
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            background-color: var(--item-bg);
+            border: 1px solid var(--card-border);
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--card-bg);
+            border-color: var(--accent-color);
+        }
+
+        .nav-btn.active {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-hover);
+        }
+
         /* Content Area */
         .main-content {
             margin-left: 260px;
@@ -164,22 +188,42 @@
             font-size: 16px;
             font-weight: bold;
             color: var(--text-color);
+            background-color: var(--item-bg);
             cursor: pointer;
             border: none;
             outline: none;
+        }
+
+        .faq-question:hover {
+            background-color: var(--card-border);
         }
 
         .faq-answer {
             padding: 0 15px;
             max-height: 0;
             overflow: hidden;
-            background-color: var(--item-bg);
+            background-color: var(--card-bg);
             transition: max-height 0.3s ease, padding 0.3s ease;
         }
 
         .faq-item.active .faq-answer {
             padding: 15px;
             max-height: 300px;
+        }
+
+        #faq-search {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--card-border);
+            background-color: var(--item-bg);
+            color: var(--text-color);
+            outline: none;
+        }
+
+        #faq-search:focus {
+            border-color: var(--accent-color);
         }
 
         /* Blockquote Styling */
@@ -231,7 +275,7 @@
             font-size: 12px;
         }
 
-        /* Glowing Emerald Download Button */
+        /* Download Button */
         .glowing-download-btn {
             display: inline-block;
             padding: 16px 32px;
@@ -270,53 +314,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* ==========================================
-           AERO GLASS BUTTON EFFECTS
-           ========================================== */
-        .nav-btn, 
-        .faq-question,
-        #faq-search {
-            padding: 12px 16px;
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-color);
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: left;
-            background: linear-gradient(180deg, 
-                rgba(255, 255, 255, 0.18) 0%, 
-                rgba(255, 255, 255, 0.05) 48%, 
-                rgba(0, 0, 0, 0.12) 50%, 
-                rgba(255, 255, 255, 0.08) 100%) !important;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.25) !important;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 3px 6px rgba(0, 0, 0, 0.25);
-            transition: all 0.25s ease-in-out;
-        }
-
-        .nav-btn:hover,
-        .faq-question:hover {
-            background: linear-gradient(180deg, 
-                rgba(255, 255, 255, 0.32) 0%, 
-                rgba(255, 255, 255, 0.12) 48%, 
-                rgba(0, 0, 0, 0.05) 50%, 
-                rgba(255, 255, 255, 0.2) 100%) !important;
-            border-color: rgba(255, 255, 255, 0.5) !important;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 0 12px rgba(59, 130, 246, 0.5);
-            transform: translateY(-1px);
-        }
-
-        .nav-btn.active {
-            background: linear-gradient(180deg, 
-                rgba(37, 99, 235, 0.55) 0%, 
-                rgba(29, 78, 216, 0.35) 48%, 
-                rgba(30, 64, 175, 0.55) 50%, 
-                rgba(37, 99, 235, 0.45) 100%) !important;
-            border-color: #60a5fa !important;
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 0 15px rgba(37, 99, 235, 0.7);
-        }
     </style>
 </head>
 <body>
@@ -343,7 +340,7 @@
         <!-- 1. README SECTION -->
         <div id="readme-section" class="section active">
             <h1>ZanyonLocker™ Overview</h1>
-            <p>Welcome to the official homepage of <strong>ZanyonLocker™</strong>, a lightweight, secure AES file encryption tool for Windows.</p>
+            <p>Welcome to the official homepage of <strong>ZanyonLocker™</strong>, a lightweight, secure file encryption tool for Windows.</p>
             <p>ZanyonLocker™ allows you to easily protect your sensitive files with master key passwords and custom <code>.zanyon</code> encrypted file formats.</p>
         </div>
 
@@ -352,7 +349,7 @@
             <h1>What's New</h1>
             <p>Check out the latest updates and release highlights for ZanyonLocker™.</p>
             <ul>
-                <li>Added full Aero glass UI styling across navigation buttons.</li>
+                <li>Clean user interface and lightweight theme engine.</li>
                 <li>Improved encryption performance and low RAM overhead.</li>
                 <li>Integrated dynamic theme customization system.</li>
             </ul>
@@ -392,12 +389,12 @@
                 </tbody>
             </table>
 
-            <p><em>Note: These are minimum requirements, meaning, for example it says at least Windows 10, 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all Requirements, then ZanyonLocker™ will run perfectly. More Space = Faster Encryption.</em></p>
+            <p><em>Note: These are minimum requirements. If your computer meets or exceeds these specifications, ZanyonLocker™ will run properly. More available storage allows faster processing.</em></p>
 
             <hr>
 
             <p><strong>How To Check Your PC Info To See Whether ZanyonLocker™ Can Run On It</strong></p>
-            <p>First, press <strong>Windows Key + R</strong> on your keyboard. Then, type <strong>msinfo32</strong> and press <strong>enter.</strong> This will give you all the specs of your PC.</p>
+            <p>First, press <strong>Windows Key + R</strong> on your keyboard. Then, type <strong>msinfo32</strong> and press <strong>enter.</strong> This will open your system information details.</p>
             
             <p><img src="https://github.com/user-attachments/assets/662a027b-b829-4e77-b7e5-64808968e15c" alt="Windows Run Dialogue" width="399" height="206"></p>
             <p>
@@ -413,20 +410,14 @@
 
             <!-- FAQ Search Bar -->
             <div style="position: relative; margin-bottom: 25px;">
-                <input type="text" id="faq-search" onkeyup="searchFaq()" placeholder="Search FAQ..." 
-                       style="width: 100%; padding: 14px 45px 14px 18px; outline: none;">
-                
-                <button id="clear-search-btn" onclick="clearFaqSearch()" 
-                        style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%) scale(0.8); background: rgba(150, 150, 150, 0.2); border: none; color: var(--text-color); width: 26px; height: 26px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 14px; opacity: 0; pointer-events: none; transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);">
-                    ✕
-                </button>
+                <input type="text" id="faq-search" onkeyup="searchFaq()" placeholder="Search FAQ...">
             </div>
 
             <!-- Question 1 -->
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">What if my PC can't run ZanyonLocker?</button>
                 <div class="faq-answer">
-                    <p>If your PC hasn't met the system requirements to officially run ZanyonLocker on your system, you might want to Upgrade your version of Windows, Get a newer & modern PC or Physically install a new RAM stick to your computer.</p>
+                    <p>If your PC does not meet the system requirements to run ZanyonLocker, consider updating your operating system or upgrading hardware memory.</p>
                 </div>
             </div>
 
@@ -434,7 +425,7 @@
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">Where are my encrypted .zanyon files saved?</button>
                 <div class="faq-answer">
-                    <p>To find where your encrypted file has went, look for the place where the original decrypted file was (eg Desktop) and your encrypted <code>.zanyon</code> version should be there too.</p>
+                    <p>Your encrypted <code>.zanyon</code> files are saved in the same directory as the original source file.</p>
                 </div>
             </div>
 
@@ -442,7 +433,7 @@
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">What happens if I lose my password?</button>
                 <div class="faq-answer">
-                    <p>If you lose your master key password for ZanyonLocker, <strong>there is absolutely no guarantee or way that you can get your file back.</strong> If you really need your file back and you lost your password to the file or forgot it, you can try looking if the master key file went into the Recycle Bin or if you hid it in File Explorer. Otherwise, there is no way to get your file back.</p>
+                    <p>If you lose your master key password for ZanyonLocker, the file cannot be recovered. Ensure you keep your passwords stored safely.</p>
                 </div>
             </div>
 
@@ -454,14 +445,14 @@
             <hr>
 
             <h3>FAQ Submission</h3>
-            <p>Are we missing something? Request us to add it by emailing me at <a href="mailto:RaidenCorporation@proton.me">RaidenCorporation@proton.me</a>!</p>
+            <p>Have questions? Reach out via email at <a href="mailto:RaidenCorporation@proton.me">RaidenCorporation@proton.me</a>.</p>
         </div>
 
         <!-- 5. DOWNLOAD FOR FREE SECTION -->
         <div id="download-section" class="section">
             <h1>Download for Free</h1>
             <p style="font-size: 18px; margin-bottom: 30px;">
-                Download ZanyonLocker latest version securely in a click
+                Download the latest version of ZanyonLocker directly.
             </p>
 
             <div style="margin-bottom: 25px;">
@@ -476,7 +467,7 @@
         <!-- 6. THEME SWITCHER SECTION -->
         <div id="theme-section" class="section">
             <h1>Choose Theme</h1>
-            <p style="margin-bottom: 20px;">Select your preferred look for the site.</p>
+            <p style="margin-bottom: 20px;">Select your preferred appearance for the site.</p>
 
             <div class="theme-grid">
                 <!-- Theme 1: ZanyonUI Dark -->
@@ -485,7 +476,7 @@
                         ZanyonUI Dark
                     </div>
                     <strong>ZanyonUI Dark</strong>
-                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Blue & Soft Dark</p>
+                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Blue & Dark</p>
                 </div>
 
                 <!-- Theme 2: ZanyonUI Light -->
@@ -494,7 +485,7 @@
                         ZanyonUI Light
                     </div>
                     <strong>ZanyonUI Light</strong>
-                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Blue & Crisp White</p>
+                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Blue & Light</p>
                 </div>
 
                 <!-- Theme 3: Monokai Dark -->
@@ -503,7 +494,7 @@
                         Monokai Dark
                     </div>
                     <strong>Monokai Dark</strong>
-                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Crimson & Soft Dark</p>
+                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Crimson & Dark</p>
                 </div>
 
                 <!-- Theme 4: Monokai Light -->
@@ -512,27 +503,26 @@
                         Monokai Light
                     </div>
                     <strong>Monokai Light</strong>
-                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Crimson & Crisp White</p>
+                    <p style="font-size: 13px; margin-top: 6px; margin-bottom: 0;">Crimson & Light</p>
                 </div>
             </div>
         </div>
 
         <!-- 7. LINKS SECTION -->
         <div id="links-section" class="section">
-            <h1>All My Links</h1>
-            <p>Check out all of my official links without any crap: <a href="https://linktr.ee/RaidenCorp" target="_blank">Linktree</a></p>
-            <p>All of my YouTube videos (subscribe!): <a href="https://www.youtube.com/@RaidenCorporation?sub_confirmation=1" target="_blank">YouTube</a></p>
-            <p>My official GitHub to download my projects: <a href="https://github.com/RaidenCorporation" target="_blank">GitHub</a></p>
-            <p>My official SourceForge to download my projects easily for people who aren't tech-savvy: <a href="https://sourceforge.net/u/raidencorp" target="_blank">SourceForge</a></p>
-            <p>Download my free media from Pixabay: <a href="https://pixabay.com/users/raidencorporation-53407453" target="_blank">Pixabay</a></p>
+            <h1>All Links</h1>
+            <p>Official links hub: <a href="https://linktr.ee/RaidenCorp" target="_blank">Linktree</a></p>
+            <p>YouTube channel: <a href="https://www.youtube.com/@RaidenCorporation?sub_confirmation=1" target="_blank">YouTube</a></p>
+            <p>GitHub repository: <a href="https://github.com/RaidenCorporation" target="_blank">GitHub</a></p>
+            <p>SourceForge project downloads: <a href="https://sourceforge.net/u/raidencorp" target="_blank">SourceForge</a></p>
+            <p>Media resources: <a href="https://pixabay.com/users/raidencorporation-53407453" target="_blank">Pixabay</a></p>
         </div>
 
         <!-- 8. SHOP SECTION -->
         <div id="shop-section" class="section">
             <h1>Raiden Corporation Shop</h1>
             <blockquote>
-                <p>The shop isn't available yet. Maybe check again in a few more months?</p>
-                <p>Shop will be arriving soon!</p>
+                <p>The shop is coming soon. Stay tuned for future updates!</p>
             </blockquote>
         </div>
 
@@ -545,29 +535,19 @@
     <script>
         // Section Navigation Switcher
         function showSection(sectionId) {
-            // Hide all sections
-            document.getElementById('readme-section').classList.remove('active');
-            document.getElementById('whatsnew-section').classList.remove('active');
-            document.getElementById('requirements-section').classList.remove('active');
-            document.getElementById('faq-section').classList.remove('active');
-            document.getElementById('download-section').classList.remove('active');
-            document.getElementById('theme-section').classList.remove('active');
-            document.getElementById('links-section').classList.remove('active');
-            document.getElementById('shop-section').classList.remove('active');
+            document.querySelectorAll('.section').forEach(function(sec) {
+                sec.classList.remove('active');
+            });
 
-            // Deactivate all buttons
-            document.getElementById('btn-readme').classList.remove('active');
-            document.getElementById('btn-whatsnew').classList.remove('active');
-            document.getElementById('btn-requirements').classList.remove('active');
-            document.getElementById('btn-faq').classList.remove('active');
-            document.getElementById('btn-download').classList.remove('active');
-            document.getElementById('btn-theme').classList.remove('active');
-            document.getElementById('btn-links').classList.remove('active');
-            document.getElementById('btn-shop').classList.remove('active');
+            document.querySelectorAll('.nav-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+            });
 
-            // Show selected section and activate button
-            document.getElementById(sectionId + '-section').classList.add('active');
-            document.getElementById('btn-' + sectionId).classList.add('active');
+            var targetSection = document.getElementById(sectionId + '-section');
+            var targetBtn = document.getElementById('btn-' + sectionId);
+
+            if (targetSection) targetSection.classList.add('active');
+            if (targetBtn) targetBtn.classList.add('active');
         }
 
         // FAQ Accordion Toggle
@@ -578,21 +558,9 @@
 
         // FAQ Search Filter
         function searchFaq() {
-            var inputElement = document.getElementById("faq-search");
-            var input = inputElement.value.toLowerCase();
+            var input = document.getElementById("faq-search").value.toLowerCase();
             var items = document.querySelectorAll(".faq-item");
-            var clearBtn = document.getElementById("clear-search-btn");
             var visibleCount = 0;
-
-            if (input.length > 0) {
-                clearBtn.style.opacity = "1";
-                clearBtn.style.pointerEvents = "auto";
-                clearBtn.style.transform = "translateY(-50%) scale(1)";
-            } else {
-                clearBtn.style.opacity = "0";
-                clearBtn.style.pointerEvents = "none";
-                clearBtn.style.transform = "translateY(-50%) scale(0.8)";
-            }
 
             items.forEach(function(item) {
                 var text = item.innerText.toLowerCase();
@@ -605,26 +573,9 @@
             });
 
             var noResults = document.getElementById("no-faq-results");
-            if (visibleCount === 0) {
-                noResults.style.display = "block";
-            } else {
-                noResults.style.display = "none";
+            if (noResults) {
+                noResults.style.display = (visibleCount === 0) ? "block" : "none";
             }
-        }
-
-        // Clear FAQ Search
-        function clearFaqSearch() {
-            var clearBtn = document.getElementById("clear-search-btn");
-            var searchInput = document.getElementById("faq-search");
-
-            clearBtn.classList.add("clear-btn-active");
-            setTimeout(function() {
-                clearBtn.classList.remove("clear-btn-active");
-            }, 250);
-
-            searchInput.value = "";
-            searchFaq();
-            searchInput.focus();
         }
 
         // Toast Notification Function
@@ -655,7 +606,6 @@
             document.body.setAttribute('data-theme', themeName);
             localStorage.setItem('zanyon_theme', themeName);
 
-            // Update Theme Card Selection UI
             var cards = document.querySelectorAll('.theme-card');
             cards.forEach(function(card) {
                 card.classList.remove('selected');
@@ -667,23 +617,17 @@
             }
         }
 
-        // Auto Detect System Theme or Load Saved Preference on Page Load
+        // Initialize Theme
         function initTheme() {
             var savedTheme = localStorage.getItem('zanyon_theme');
-            
             if (savedTheme) {
                 setTheme(savedTheme);
             } else {
                 var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                if (prefersDark) {
-                    setTheme('zanyon-dark');
-                } else {
-                    setTheme('zanyon-light');
-                }
+                setTheme(prefersDark ? 'zanyon-dark' : 'zanyon-light');
             }
         }
 
-        // Initialize Theme on Page Load
         initTheme();
     </script>
 
