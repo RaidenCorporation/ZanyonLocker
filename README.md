@@ -1,6 +1,6 @@
 <img width="802" height="322" alt="zl" src="https://github.com/user-attachments/assets/1cc909a1-ac19-4597-b94f-7dc50db91faa" />
 
-### _ZanyonLocker™ is a safe encryption tool made by Raiden Corporation. It is used to encrypt files over a secure process._
+### _ZanyonLocker is a safe encryption tool made by Raiden Corporation. It is used to encrypt files over a secure process._
 
 ---
 
@@ -11,7 +11,7 @@
 
 ## 🔐 **Security**
 
-ZanyonLocker™ uses AES-256 (Advanced Encryption Standard) to securely encrypt your data for privacy.
+ZanyonLocker uses AES-256 (Advanced Encryption Standard) to securely encrypt your data for privacy.
 
 ---
 
@@ -24,17 +24,17 @@ ZanyonLocker runs on the user interface named ZanyonUI. It is a modern type of U
 
 ## 🛡 **How To Use ZanyonLocker**
 
-To encrypt your first file using ZanyonLocker™, follow these steps in order. First, run the zl_setup.exe installer to set up ZanyonLocker™ on your PC, then open the application from your Start Menu, Desktop shortcut or by right-clicking a file in Windows Explorer.
+To encrypt your first file using ZanyonLocker, follow these steps in order. First, run the zl_setup.exe installer to set up ZanyonLocker on your PC, then open the application from your Start Menu, Desktop shortcut or by right-clicking a file in Windows Explorer.
 When the main window opens, you will see three main steps. First, click Set up a password. A window will pop up asking you to enter a password only YOU know.
 After setting your password, you can proceed to the second step: Encrypt a file. When prompted, enter the password you created. A File Explorer window will pop up allowing you to select any file or folder to encrypt. Once selected, the file will be encrypted and given a .zanyon extension (eg secret.txt » secret.txt.zanyon).
-To decrypt a file, open ZanyonLocker™ and click Decrypt a file. Enter your password when prompted, select the encrypted .zanyon file in the File Explorer window, and it will be restored to its original state (eg secret.txt.zanyon » secret.txt). You can also configure app preferences, toggle dark mode or check for live updates directly from the Settings gear icon in the top-left header.
+To decrypt a file, open ZanyonLocker and click Decrypt a file. Enter your password when prompted, select the encrypted .zanyon file in the File Explorer window, and it will be restored to its original state (eg secret.txt.zanyon » secret.txt). You can also configure app preferences, toggle dark mode or check for live updates directly from the Settings gear icon in the top-left header.
 
 ![.zanyon File Extension Icon by Raiden Bisnath (Raiden Corporation)](https://i.imgur.com/Fd8QUmG.png)
 
 
 ---
 
-### 💡 **Pro Tip:** ZanyonLocker™ keeps the original file for safety. To ensure total privacy, **manually delete the original file** _after_ you see the .zanyon version created.
+### 💡 **Pro Tip:** ZanyonLocker keeps the original file for safety. To ensure total privacy, **manually delete the original file** _after_ you see the .zanyon version created. This method is used for backup purposes.
 
 ---
 
@@ -50,11 +50,11 @@ To decrypt a file, open ZanyonLocker™ and click Decrypt a file. Enter your pas
 | **Architecture** | x64 (64-bit) |
 
 
-_Note: These are mimimum requirements, meaning, for example it says at least Windows 10, 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all Requirements, then ZanyonLocker™ will run perfectly. More Space = Faster Encryption._
+_Note: These are mimimum requirements, meaning, for example it says at least Windows 10, 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all Requirements, then ZanyonLocker will run perfectly. More Space = Faster Encryption._
 
 
 ---
-**How To Check Your PC Info To See Whether ZanyonLocker™ Can Run On It**
+**How To Check Your PC Info To See Whether ZanyonLocker Can Run On It**
 First, press **Windows Key + R** on your keyboard. Then, type **msinfo32** and press **enter.** This will give you all the specs of your PC.
 <img width="399" height="206" alt="Windows Run Dialogue" src="https://github.com/user-attachments/assets/662a027b-b829-4e77-b7e5-64808968e15c" />
 
@@ -63,25 +63,25 @@ First, press **Windows Key + R** on your keyboard. Then, type **msinfo32** and p
 ## 🔰 **Verification & Safety**
 
 
-ZanyonLocker™ is a legitimate privacy utility developed by Raiden Corporation.
+ZanyonLocker is a legitimate privacy utility developed by Raiden Corporation.
 
 **Not Malware:** This tool is strictly for personal file encryption and is **NOT** related to ransomware like *SynoLocker* or any other malicious software.
 
-**Official Source:** The only official and safe versions are hosted here on the [**RaidenCorporation GitHub**](https://github.com/RaidenCorporation/ZanyonLocker) and [**YouTube**](https://youtube.com/@RaidenCorporation) which is **Raiden Corporation** and the offical [**SourceForge Mirror**](https://sourceforge.net/p/zanyonlocker) at our account [**raidencorp**](https://sourceforge.net/u/raidencorp)
+**Official Source:** The only official and safe versions are hosted here on the [**RaidenCorporation GitHub**](https://github.com/RaidenCorporation/ZanyonLocker) and [**YouTube**](https://youtube.com/@RaidenCorporation) which is **Raiden Corporation** and the offical [**SourceForge Mirror**](https://sourceforge.net/p/zanyonlocker) at our account [**raidencorp**](https://sourceforge.net/u/raidencorp) or the [ZanyonLocker Website](https://raidencorporation.github.io/ZanyonLocker) or the AlternativeTo mirror (releasing soon)
 
-**AI Overview/AI Misconceptions:** **AI Overview on Google Search** may sometimes call it malicious _just because_ its an **unsigned C# app** even though it's **totally safe**. AI Overview can do this sometimes, so always double-check you are installing ZanyonLocker™ from the official GitHub and **not** taking _incorrect AI Overview advice_.
+**AI Overview/AI Misconceptions:** **AI Overview on Google Search** may sometimes call it malicious _just because_ its an **unsigned C# app** even though it's **totally safe**. AI Overview can do this sometimes, so always double-check you are installing ZanyonLocker™ from the official websites or mirrors and **not** taking _incorrect AI Overview advice_.
 
 **Developer:** Created by a young developer named Raiden Bisnath (South Africa).
 
-> ## Note: ZanyonLocker™ is strictly source-available. It is **NOT** open-source.
+> ### Note: ZanyonLocker is strictly source-available. It is **NOT** open-source.
 
 ## ⚠️ **Disclaimer**
 
-ZanyonLocker™ will not be used for **unethical reasons**, such as hacking. Use ZanyonLocker™ _only_ for **ethical** reasons.
+ZanyonLocker will not be used for **unethical reasons**, such as hacking. Use ZanyonLocker™ _only_ for **ethical** reasons.
 
-ℹ **Info:**
+ ℹ️ **Info:**
 
-**Version:** v4.0.0 (v5.0.0 in development, coming soon!)
+**ZanyonLocker and ZanyonUI Version:** ZanyonLocker v4.0 with ZanyonUI 1.0 Beta (ZanyonLocker v5.0 with ZanyonUI 1.0 in development, coming soon!)
 
 <img width="622" height="170" alt="image" src="https://github.com/user-attachments/assets/b51303b1-2334-478c-9615-3024b4794aef" />
 
