@@ -1,5 +1,10 @@
 <img width="802" height="322" alt="zl" src="https://github.com/user-attachments/assets/1cc909a1-ac19-4597-b94f-7dc50db91faa" />
 
+---
+
+[![Download ZanyonLocker](https://img.shields.io/sourceforge/dt/zanyonlocker.svg)](https://sourceforge.net/projects/zanyonlocker/files/latest/download) ![version](https://img.shields.io/badge/version-4.0-purple)
+
+
 ### _ZanyonLocker is a safe encryption tool made by Raiden Corporation. It is used to encrypt files over a secure process._
 
 ---
