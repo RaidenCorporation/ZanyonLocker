@@ -27,6 +27,10 @@ ZanyonLocker runs on the user interface named ZanyonUI. It is a modern type of U
 
 ---
 
+**🗣️ Language:** Available only in South African English (en-ZA) which follows British English conventions. No version of ZanyonLocker is written in American English. 
+
+---
+
 ## 🛡 **How To Use ZanyonLocker**
 
 To encrypt your first file using ZanyonLocker, follow these steps in order. First, run the zl_setup.exe installer to set up ZanyonLocker on your PC, then open the application from your Start Menu, Desktop shortcut or by right-clicking a file in Windows Explorer.
