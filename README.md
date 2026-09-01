@@ -18,12 +18,29 @@
 
 ZanyonLocker uses AES-256 (Advanced Encryption Standard) to securely encrypt your data for privacy.
 
+### 🕒 Long-Term Use
+
+ZanyonLocker is **great** for long-term use, even though it is not popular. Here is real and verified proof:
+
+#### ✅ Verified Malware-Free Proof
+
+**1. SourceForge:**
+On **SourceForge**, it has been officially verified that ZanyonLocker is malware-free. 
+
+**2. C# Source Code File:**
+If you look at the official [ZanyonLocker Safety Proof Code](https://github.com/RaidenCorporation/ZanyonLocker/blob/main/), it is verified that there is 0 traits of any type of any malware in it. If you don't believe me, check it yourself.
+
+**3. VirusTotal Scan:**
+ZanyonLocker has gotten an extremely clean 1/67 score on **VirusTotal**. You can see the verified scan results [here.](https://www.virustotal.com/gui/file/01a26851906e2e9b20030c93c533af82a7129183bd7785d5225735969a7a57bd/detection)
+
+*Crucial Note: Results and analysis may vary slightly depending on the ZanyonLocker version.*
+
 ---
 
 ## 🖥️ User Interface
 ZanyonLocker runs on the user interface named ZanyonUI. It is a modern type of UI that uses Mica/Aero effects and glass effects with smooth animations and fluid colours. It is a UI, not a framework!
 
-**Latest ZanyonUI version:** ZanyonUI 1.0 Beta (in ZanyonLocker v4.0), ZanyonUI 1.0 will be in ZanyonLocker v5.0.
+**📲 Latest ZanyonUI version:** ZanyonUI 1.0 Beta (in ZanyonLocker v4.0), ZanyonUI 1.0 will be in ZanyonLocker v5.0.
 
 ---
 
@@ -68,7 +85,9 @@ First, press **Windows Key + R** on your keyboard. Then, type **msinfo32** and p
 <img width="399" height="206" alt="Windows Run Dialogue" src="https://github.com/user-attachments/assets/662a027b-b829-4e77-b7e5-64808968e15c" />
 
 <img width="195" height="204" alt="Windows Key on keyboard" src="https://github.com/user-attachments/assets/dbfa382c-f497-4b98-bcc3-c397ff5619ae" /><img width="105" height="101" alt="R Key on keyboard" src="https://github.com/user-attachments/assets/bf7ae126-9c07-4b74-a9aa-765f33d45e7c" />
+
 ---
+
 ## 🔰 **Verification & Safety**
 
 
@@ -78,19 +97,21 @@ ZanyonLocker is a legitimate privacy utility developed by Raiden Corporation.
 
 **Official Source:** The only official and safe versions are hosted here on the [**RaidenCorporation GitHub**](https://github.com/RaidenCorporation/ZanyonLocker) and [**YouTube**](https://youtube.com/@RaidenCorporation) which is **Raiden Corporation** and the offical [**SourceForge Mirror**](https://sourceforge.net/p/zanyonlocker) at our account [**raidencorp**](https://sourceforge.net/u/raidencorp) or the [ZanyonLocker Website](https://raidencorporation.github.io/ZanyonLocker) or the AlternativeTo mirror (releasing soon)
 
-**AI Overview/AI Misconceptions:** **AI Overview on Google Search** may sometimes call it malicious _just because_ its an **unsigned C# app** even though it's **totally safe**. AI Overview can do this sometimes, so always double-check you are installing ZanyonLocker™ from the official websites or mirrors and **not** taking _incorrect AI Overview advice_.
+**AI Overview/AI Misconceptions:** **AI Overview on Google Search** may sometimes call it malicious _just because_ its an **unsigned C# app** even though it's **totally safe**. AI Overview can do this sometimes, so always double-check you are installing ZanyonLocker from the official websites or mirrors and **not** taking _incorrect AI Overview advice_.
 
-**Developer:** Created by a young developer named Raiden Bisnath (South Africa).
+**Developer:** Created by a young developer named Raiden Bisnath (South Africa). 
 
 > ### Note: ZanyonLocker is strictly source-available. It is **NOT** open-source.
 
 ## ⚠️ **Disclaimer**
 
-ZanyonLocker will not be used for **unethical reasons**, such as hacking. Use ZanyonLocker™ _only_ for **ethical** reasons.
+ZanyonLocker will not be used for **unethical reasons**, such as hacking. Use ZanyonLocker _only_ for **ethical** reasons.
 
- ℹ️ **Info:**
+## ℹ️ **Info:**
 
-**ZanyonLocker and ZanyonUI Version:** ZanyonLocker v4.0 with ZanyonUI 1.0 Beta (ZanyonLocker v5.0 with ZanyonUI 1.0 in development, coming soon!)
+**ZanyonLocker and ZanyonUI Version:** ZanyonLocker v4.0 with ZanyonUI 1.0 Beta
+
+(ZanyonLocker v5.0 with ZanyonUI 1.0 in development, coming soon!)
 
 <img width="622" height="170" alt="image" src="https://github.com/user-attachments/assets/b51303b1-2334-478c-9615-3024b4794aef" />
 
