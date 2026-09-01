@@ -28,7 +28,7 @@ ZanyonLocker is **great** for long-term use, even though it is not popular. Here
 On **SourceForge**, it has been officially verified that ZanyonLocker is malware-free. 
 
 **2. C# Source Code File:**
-If you look at the official [ZanyonLocker Safety Proof Code](https://github.com/RaidenCorporation/ZanyonLocker/blob/main/), it is verified that there is 0 traits of any type of any malware in it. If you don't believe me, check it yourself.
+If you look at the official [ZanyonLocker Safety Proof Code](https://github.com/RaidenCorporation/ZanyonLocker/blob/main/zl-code-safety-proof.txt), it is verified that there is 0 traits of any type of any malware in it. If you don't believe me, check it yourself.
 
 **3. VirusTotal Scan:**
 ZanyonLocker has gotten an extremely clean 1/67 score on **VirusTotal**. You can see the verified scan results [here.](https://www.virustotal.com/gui/file/01a26851906e2e9b20030c93c533af82a7129183bd7785d5225735969a7a57bd/detection)
