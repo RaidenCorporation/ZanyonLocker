@@ -1,5 +1,4 @@
-[<img width="802" height="322" alt="zl" src="https://github.com/user-attachments/assets/1cc909a1-ac19-4597-b94f-7dc50db91faa" />](https://raidencorporation.github.io/ZanyonLocker)
-
+![ZanyonLocker Logo](https://i.imgur.com/qNcLlmW.png)
 
 ---
 
@@ -56,8 +55,7 @@ When the main window opens, you will see three main steps. First, click Set up a
 After setting your password, you can proceed to the second step: Encrypt a file. When prompted, enter the password you created. A File Explorer window will pop up allowing you to select any file or folder to encrypt. Once selected, the file will be encrypted and given a .zanyon extension (eg secret.txt » secret.txt.zanyon).
 To decrypt a file, open ZanyonLocker and click Decrypt a file. Enter your password when prompted, select the encrypted .zanyon file in the File Explorer window, and it will be restored to its original state (eg secret.txt.zanyon » secret.txt). You can also configure app preferences, toggle dark mode or check for live updates directly from the Settings gear icon in the top-left header.
 
-![.zanyon File Extension Icon by Raiden Bisnath (Raiden Corporation)](https://i.imgur.com/Fd8QUmG.png)
-
+![.zanyon File Extension Icon](https://i.imgur.com/Fd8QUmG.png)
 
 ---
 
