@@ -1,5 +1,7 @@
 [<img width="802" height="322" alt="zl" src="https://github.com/user-attachments/assets/1cc909a1-ac19-4597-b94f-7dc50db91faa" />](https://raidencorporation.github.io/ZanyonLocker)
 
+<meta name="google-site-verification" content="UOEbAvZfdC9L-XYhvhOpZ9IfX7Sj_8KF-7uiRXN89Nk" />
+
 ---
 
 [![Download ZanyonLocker](https://img.shields.io/sourceforge/dt/zanyonlocker.svg)](https://sourceforge.net/projects/zanyonlocker/files/latest/download) ![version](https://img.shields.io/badge/version-4.0-purple)
