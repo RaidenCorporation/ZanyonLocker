@@ -24,16 +24,38 @@ ZanyonLocker is **great** for long-term use, even though it is not popular. Here
 
 #### ✅ Verified Malware-Free Proof
 
-**1. SourceForge:**
+**1. 🔥 SourceForge:**
 On **SourceForge**, it has been officially verified that ZanyonLocker is malware-free. 
 
-**2. C# Source Code File:**
+**2. 💾 C# source code file:**
 If you look at the official [ZanyonLocker Safety Proof Code](https://github.com/RaidenCorporation/ZanyonLocker/blob/main/zl-code-safety-proof.txt), it is verified that there is 0 traits of any type of any malware in it. If you don't believe me, check it yourself.
 
-**3. VirusTotal Scan:**
+**3. 🦠 VirusTotal scan:**
 ZanyonLocker has gotten an extremely clean 1/67 score on **VirusTotal**. You can see the verified scan results [here.](https://www.virustotal.com/gui/file/01a26851906e2e9b20030c93c533af82a7129183bd7785d5225735969a7a57bd/detection)
 
 *Crucial Note: Results and analysis may vary slightly depending on the ZanyonLocker version.*
+
+**4. 🐛  Bugs:**
+For ZanyonLocker, it is extremely rare that there are bugs found in the official app. This makes it great if you hate unstable buggy apps.
+
+**5. 💻 Files are stored locally:**
+When you encrypt a file, it is stored locally on your device instead of a server for maximum privacy.
+
+**6. 🔪 Not a RAM hog:**
+ZanyonLocker is light and doesn't eat your RAM. It's best even on a legacy machine running Windows 10 with 2GB RAM and an HDD.
+
+**7. 🔁 Future updates:**
+Updates for ZanyonLocker will be available for long. Very long, and for years. Official mirrors and repositories will never go down.
+
+**8. 📁 File safety:**
+Currently, if you lose the password to your file, there's no going back. However, there _is_ a planned update (unspecified update) that will include a tiny, lightweight and debloated password manager built into the app. 
+
+**9. 🔎 Help & queries:**
+ZanyonLocker has an official place (or places) to get help and more. All of these are verified.
+
+**📨 Email:** Support email is [RaidenCorporation@proton.me](mailto:RaidenCorporation@proton.me).
+
+**❓ FAQ (Frequently Asked Questions) [Recommended]:** You can look at the official ZanyonLocker FAQ by visiting [the official website](https://raidencorporation.github.io/ZanyonLocker).
 
 ---
 
