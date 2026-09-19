@@ -23,8 +23,9 @@ ZanyonLocker uses AES-256 (Advanced Encryption Standard) to securely encrypt you
 
 ZanyonLocker is **great** for long-term use, even though it is not popular. Here is real and verified proof:
 
-#### ✅ Verified Malware-Free Proof
-
+<details>
+  <summary> ✅ Verified Malware-Free Proof </summary>
+  
 **1. 🔥 SourceForge:**
 On **SourceForge**, it has been officially verified that ZanyonLocker is malware-free. 
 
@@ -36,7 +37,7 @@ ZanyonLocker has gotten an extremely clean 1/67 score on **VirusTotal**. You can
 
 *Crucial Note: Results and analysis may vary slightly depending on the ZanyonLocker version.*
 
-**4. 🐛  Bugs:**
+**4. 🐛 Bugs:**
 For ZanyonLocker, it is extremely rare that there are bugs found in the official app. This makes it great if you hate unstable buggy apps.
 
 **5. 💻 Files are stored locally:**
@@ -57,6 +58,11 @@ ZanyonLocker has an official place (or places) to get help and more. All of thes
 **📨 Email:** Support email is [RaidenCorporation@proton.me](mailto:RaidenCorporation@proton.me).
 
 **❓ FAQ (Frequently Asked Questions) [Recommended]:** You can look at the official ZanyonLocker FAQ by visiting [the official website](https://raidencorporation.github.io/ZanyonLocker).
+</details>
+
+
+
+
 
 ---
 
@@ -78,6 +84,12 @@ When the main window opens, you will see three main steps. First, click Set up a
 After setting your password, you can proceed to the second step: Encrypt a file. When prompted, enter the password you created. A File Explorer window will pop up allowing you to select any file or folder to encrypt. Once selected, the file will be encrypted and given a .zanyon extension (eg secret.txt » secret.txt.zanyon).
 To decrypt a file, open ZanyonLocker and click Decrypt a file. Enter your password when prompted, select the encrypted .zanyon file in the File Explorer window, and it will be restored to its original state (eg secret.txt.zanyon » secret.txt). You can also configure app preferences, toggle dark mode or check for live updates directly from the Settings gear icon in the top-left header.
 
+
+Video Tutorial:
+
+https://github.com/user-attachments/assets/d39497f5-9f1f-44fc-a24d-f8e35849d5b2
+
+
 ![.zanyon File Extension Icon](https://i.imgur.com/Fd8QUmG.png)
 
 ---
@@ -98,7 +110,7 @@ To decrypt a file, open ZanyonLocker and click Decrypt a file. Enter your passwo
 | **Architecture** | x64 (64-bit) |
 
 
-_Note: These are mimimum requirements, meaning, for example it says at least Windows 10, 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all Requirements, then ZanyonLocker will run perfectly. More Space = Faster Encryption._
+_Note: These are mimimum requirements, meaning, for example it says at least Windows 10 22H2, but if you don't have an old version like that and you have a later version, that is perfect. If it meets all requirements, then ZanyonLocker will run perfectly. More Space = Faster Encryption._
 
 
 ---
@@ -123,7 +135,8 @@ ZanyonLocker is a legitimate privacy utility developed by Raiden Corporation.
 
 **Developer:** Created by a young developer named Raiden Bisnath (South Africa). 
 
-> ### Note: ZanyonLocker is strictly source-available. It is **NOT** open-source.
+> [!NOTE]
+> ZanyonLocker is strictly source-available. It is **NOT** open-source.
 
 ## ⚠️ **Disclaimer**
 
@@ -141,6 +154,10 @@ ZanyonLocker will not be used for **unethical reasons**, such as hacking. Use Za
 
 
 
+**Licence:** ZanyonLocker uses the [NM-SA (NoModify) Licence.](https://github.com/RaidenCorporation/NM-SA-licence)
+
+
+![NM-SA Licence Logo](https://raw.githubusercontent.com/RaidenCorporation/NM-SA-licence/refs/heads/main/NM-SA%20Logo%20Art.png)
 
 
 # 🔗 Links
