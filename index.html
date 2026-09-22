@@ -330,9 +330,42 @@
         }
 
         .faq-item.active .faq-answer {
-            max-height: 500px;
+            max-height: 1000px;
             padding: 0 20px 20px 20px;
             transition: max-height 0.5s ease-in-out, padding 0.35s ease;
+        }
+
+        /* HTML Native Dropdowns (details/summary) Styling */
+        details {
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 12px 0;
+            background: var(--item-bg);
+            color: var(--text-color);
+            transition: all 0.25s ease;
+        }
+        
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            outline: none;
+            user-select: none;
+        }
+
+        details[open] summary {
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--card-border);
+            padding-bottom: 8px;
+        }
+
+        details > div {
+            animation: slideDown 0.25s ease-in-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* FAQ Search Clear Button Click Pulse Animation */
@@ -586,7 +619,6 @@
             <button id="btn-download" onclick="showSection('download')">Download for Free</button>
             <button id="btn-theme" onclick="showSection('theme')">Theme</button>
             <button id="btn-links" onclick="showSection('links')">Links</button>
-            <button id="btn-shop" onclick="showSection('shop')">Shop (coming soon)</button>
         </div>
         
         <!-- Pinned Bottom Share Button -->
@@ -604,7 +636,7 @@
 
 <p>
   <a href="https://sourceforge.net/projects/zanyonlocker/files/latest/download"><img src="https://img.shields.io/sourceforge/dt/zanyonlocker.svg?style=for-the-badge&amp;color=39A7FF" alt="Download ZanyonLocker" /></a>
-  <a href="RaidenCorporation/ZanyonLocker"><img src="https://img.shields.io/badge/version-4.0-B39DDB?style=for-the-badge" alt="Version" /></a>
+  <a href="https://github.com/RaidenCorporation/ZanyonLocker"><img src="https://img.shields.io/badge/version-4.0-B39DDB?style=for-the-badge" alt="Version" /></a>
 </p>
 
 <h3><em>ZanyonLocker is a safe encryption tool made by Raiden Corporation. It is used to encrypt files over a secure process.</em></h3>
@@ -625,39 +657,40 @@
 
 <details>
   <summary> ✅ Verified Malware-Free Proof ▽</summary>
+  <div>
+    <p><strong>1. 🔥 SourceForge:</strong><br />
+    On <strong>SourceForge</strong>, it has been officially verified that ZanyonLocker is malware-free.</p>
 
-  <p><strong>1. 🔥 SourceForge:</strong><br />
-  On <strong>SourceForge</strong>, it has been officially verified that ZanyonLocker is malware-free.</p>
+    <p><strong>2. 💾 C# source code file:</strong><br />
+    If you look at the official <a href="https://github.com/RaidenCorporation/ZanyonLocker/blob/main/zl-code-safety-proof.txt">ZanyonLocker Safety Proof Code</a>, it is verified that there is 0 traits of any type of any malware in it. If you don't believe me, check it yourself.</p>
 
-  <p><strong>2. 💾 C# source code file:</strong><br />
-  If you look at the official <a href="https://github.com/RaidenCorporation/ZanyonLocker/blob/main/zl-code-safety-proof.txt">ZanyonLocker Safety Proof Code</a>, it is verified that there is 0 traits of any type of any malware in it. If you don't believe me, check it yourself.</p>
+    <p><strong>3. 🦠 VirusTotal scan:</strong><br />
+    ZanyonLocker has gotten an extremely clean 1/67 score on <strong>VirusTotal</strong>. You can see the verified scan results <a href="https://www.virustotal.com/gui/file/01a26851906e2e9b20030c93c533af82a7129183bd7785d5225735969a7a57bd/detection">here.</a></p>
 
-  <p><strong>3. 🦠 VirusTotal scan:</strong><br />
-  ZanyonLocker has gotten an extremely clean 1/67 score on <strong>VirusTotal</strong>. You can see the verified scan results <a href="https://www.virustotal.com/gui/file/01a26851906e2e9b20030c93c533af82a7129183bd7785d5225735969a7a57bd/detection">here.</a></p>
+    <p><em>Crucial Note: Results and analysis may vary slightly depending on the ZanyonLocker version.</em></p>
 
-  <p><em>Crucial Note: Results and analysis may vary slightly depending on the ZanyonLocker version.</em></p>
+    <p><strong>4. 🐛 Bugs:</strong><br />
+    For ZanyonLocker, it is extremely rare that there are bugs found in the official app. This makes it great if you hate unstable buggy apps.</p>
 
-  <p><strong>4. 🐛 Bugs:</strong><br />
-  For ZanyonLocker, it is extremely rare that there are bugs found in the official app. This makes it great if you hate unstable buggy apps.</p>
+    <p><strong>5. 💻 Files are stored locally:</strong><br />
+    When you encrypt a file, it is stored locally on your device instead of a server for maximum privacy.</p>
 
-  <p><strong>5. 💻 Files are stored locally:</strong><br />
-  When you encrypt a file, it is stored locally on your device instead of a server for maximum privacy.</p>
+    <p><strong>6. 🔪 Not a RAM hog:</strong><br />
+    ZanyonLocker is light and doesn't eat your RAM. It's best even on a legacy machine running Windows 10 with 2GB RAM and an HDD.</p>
 
-  <p><strong>6. 🔪 Not a RAM hog:</strong><br />
-  ZanyonLocker is light and doesn't eat your RAM. It's best even on a legacy machine running Windows 10 with 2GB RAM and an HDD.</p>
+    <p><strong>7. 🔁 Future updates:</strong><br />
+    Updates for ZanyonLocker will be available for long. Very long, and for years. Official mirrors and repositories will never go down.</p>
 
-  <p><strong>7. 🔁 Future updates:</strong><br />
-  Updates for ZanyonLocker will be available for long. Very long, and for years. Official mirrors and repositories will never go down.</p>
+    <p><strong>8. 📁 File safety:</strong><br />
+    Currently, if you lose the password to your file, there's no going back. However, there <em>is</em> a planned update (unspecified update) that will include a tiny, lightweight and debloated password manager built into the app.</p>
 
-  <p><strong>8. 📁 File safety:</strong><br />
-  Currently, if you lose the password to your file, there's no going back. However, there <em>is</em> a planned update (unspecified update) that will include a tiny, lightweight and debloated password manager built into the app.</p>
+    <p><strong>9. 🔎 Help &amp; queries:</strong><br />
+    ZanyonLocker has an official place (or places) to get help and more. All of these are verified.</p>
 
-  <p><strong>9. 🔎 Help &amp; queries:</strong><br />
-  ZanyonLocker has an official place (or places) to get help and more. All of these are verified.</p>
+    <p><strong>📨 Email:</strong> Support email is <a href="mailto:RaidenCorporation@proton.me">RaidenCorporation@proton.me</a>.</p>
 
-  <p><strong>📨 Email:</strong> Support email is <a href="mailto:RaidenCorporation@proton.me">RaidenCorporation@proton.me</a>.</p>
-
-  <p><strong>❓ FAQ (Frequently Asked Questions) [Recommended]:</strong> You can look at the official ZanyonLocker FAQ by visiting <a href="https://raidencorporation.github.io/ZanyonLocker">the official website</a>.</p>
+    <p><strong>❓ FAQ (Frequently Asked Questions) [Recommended]:</strong> You can look at the official ZanyonLocker FAQ by visiting <a href="https://raidencorporation.github.io/ZanyonLocker">the official website</a>.</p>
+  </div>
 </details>
 
 <hr />
@@ -801,9 +834,8 @@ First, press <strong>Windows Key + R</strong> on your keyboard. Then, type <stro
         <!-- 2. WHAT'S NEW SECTION -->
         <div id="whatsnew-section" class="section">
             <p style="font-size: 17px;">
-               <p>
-    <em>This release of ZanyonLocker, <strong>v4.0</strong></em>, was meant to be a <strong>major update</strong> for <strong>ZanyonLocker</strong> but I had to rush in one day and it was <strong>minor instead.</strong>
-</p>
+                <em>This release of ZanyonLocker, <strong>v4.0</strong></em>, was meant to be a <strong>major update</strong> for <strong>ZanyonLocker</strong> but I had to rush in one day and it was <strong>minor instead.</strong>
+            </p>
 
 <hr>
 
@@ -918,78 +950,46 @@ First, press <strong>Windows Key + R</strong> on your keyboard. Then, type <stro
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">How do I store my passwords?</button>
                 <div class="faq-answer">
-Store it in a physical book, or follow these steps:
-<style>
-  details {
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 12px;
-    background: #111;
-    color: white;
-  }
-  summary {
-    cursor: pointer;
-    font-weight: bold;
-    list-style: none;
-  }
-  summary::-webkit-details-marker { display: none; }
-  details[open] summary { margin-bottom: 12px; }
-  details > div {
-    animation: slideDown 0.2s ease-in-out;
-  }
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  details img {
-    max-width: 100%;
-    border-radius: 6px;
-    margin: 10px 0;
-  }
-</style>
+                    <p>Store it in a physical book, or follow these steps:</p>
 
-<div class="faq">
+                    <details>
+                        <summary>Android</summary>
+                        <div>
+                            <ol>
+                                <li>Install Google Password Manager from the Play Store.</li>
+                                <li>Open it.</li>
+                                <li>Create a new password with these details:
+                                    <br><strong>App / website:</strong> https://raidencorporation.github.io/ZanyonLocker
+                                    <br><strong>Username:</strong> non
+                                    <br><strong>Password:</strong> no password
+                                    <br><strong>Note:</strong> [Put your passwords here!]
+                                    <br>a)
+                                    <br>b)
+                                    <br>c)
+                                    <br>d)
+                                    <br>e)
+                                    <br>f)
+                                    <br>g)
+                                    <br>...and so on.
+                                </li>
+                            </ol>
+                        </div>
+                    </details>
 
-<details>
-  <div>
-    <h3>Android / Mobile</h3>
-    <p>1. Install Google Password Manager from the Play Store.
-
-2. Open it.
-
-3. Create a new password with these details:
-App / website: https://raidencorporation.github.io/ZanyonLocker
-Username: non
-Password: no password
-Note: [Put your passwords here!]
-a)
-b)
-c)
-d)
-e)
-f)
-g)
-...and so on.</p>
-  </div>
-</details>
-
-    <details>
-  <div>
-    <h3>Windows / PC</h3>
-    <p>
-1. Install Chrome from google.com/chrome. If you have it already, go to chrome://password-manager/passwords.
-
-2. Follow the steps in the screenshot:
-<img>https://github.com/RaidenCorporation/ZanyonLocker/blob/main/ss-as.png?raw=true</img></p></p>
-  </div>
-</details>
-
-
-                    <p></p>
+                    <details>
+                        <summary>Windows / PC</summary>
+                        <div>
+                            <ol>
+                                <li>Install Chrome from google.com/chrome. If you have it already, go to <code>chrome://password-manager/passwords</code>.</li>
+                                <li>Follow the steps in the screenshot:
+                                    <br><br>
+                                    <img src="https://github.com/RaidenCorporation/ZanyonLocker/blob/main/ss-as.png?raw=true" alt="Chrome Password Manager Steps">
+                                </li>
+                            </ol>
+                        </div>
+                    </details>
                 </div>
             </div>
-            
 
             <!-- Question 4 -->
             <div class="faq-item">
@@ -999,7 +999,7 @@ g)
                 </div>
             </div>
 
-                            <!-- Question 5 -->
+            <!-- Question 5 -->
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">How do I compress AND encrypt a file?</button>
                 <div class="faq-answer">
@@ -1007,7 +1007,7 @@ g)
                 </div>
             </div>
 
-                            <!-- Question 6 -->
+            <!-- Question 6 -->
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">I deleted ZanyonLocker. Are my files safe or gone?</button>
                 <div class="faq-answer">
@@ -1015,7 +1015,7 @@ g)
                 </div>
             </div>
 
-                            <!-- Question 7 -->
+            <!-- Question 7 -->
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">How do I transfer my files to a new PC?</button>
                 <div class="faq-answer">
@@ -1110,34 +1110,34 @@ g)
     <!-- JavaScript Logic -->
     <script>
         // Section Navigation Switcher
-function showSection(sectionId) {
-    // 1. Hide all layout sections that end with "-section"
-    document.querySelectorAll('[id$="-section"]').forEach(section => {
-        section.classList.remove('active');
-    });
+        function showSection(sectionId) {
+            // 1. Hide all layout sections that end with "-section"
+            document.querySelectorAll('[id$="-section"]').forEach(section => {
+                section.classList.remove('active');
+            });
 
-    // 2. Deactivate all buttons that start with "btn-"
-    document.querySelectorAll('[id^="btn-"]').forEach(button => {
-        button.classList.remove('active');
-    });
+            // 2. Deactivate all buttons that start with "btn-"
+            document.querySelectorAll('[id^="btn-"]').forEach(button => {
+                button.classList.remove('active');
+            });
 
-    // 3. Find the selected target container elements
-    const targetSection = document.getElementById(sectionId + '-section');
-    const targetButton = document.getElementById('btn-' + sectionId);
+            // 3. Find the selected target container elements
+            const targetSection = document.getElementById(sectionId + '-section');
+            const targetButton = document.getElementById('btn-' + sectionId);
 
-    // 4. Safely activate them only if they exist in the HTML layout
-    if (targetSection) {
-        targetSection.classList.add('active');
-    } else {
-        console.warn('ZanyonUI Warning: Missing section element for ID "' + sectionId + '-section"');
-    }
+            // 4. Safely activate them only if they exist in the HTML layout
+            if (targetSection) {
+                targetSection.classList.add('active');
+            } else {
+                console.warn('ZanyonUI Warning: Missing section element for ID "' + sectionId + '-section"');
+            }
 
-    if (targetButton) {
-        targetButton.classList.add('active');
-    } else {
-        console.warn('ZanyonUI Warning: Missing button element for ID "btn-' + sectionId + '"');
-    }
-}
+            if (targetButton) {
+                targetButton.classList.add('active');
+            } else {
+                console.warn('ZanyonUI Warning: Missing button element for ID "btn-' + sectionId + '"');
+            }
+        }
 
         // FAQ Accordion Toggle
         function toggleFaq(buttonElement) {
