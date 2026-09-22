@@ -1110,31 +1110,34 @@ g)
     <!-- JavaScript Logic -->
     <script>
         // Section Navigation Switcher
-        function showSection(sectionId) {
-            // Hide all sections
-            document.getElementById('readme-section').classList.remove('active');
-            document.getElementById('whatsnew-section').classList.remove('active');
-            document.getElementById('requirements-section').classList.remove('active');
-            document.getElementById('faq-section').classList.remove('active');
-            document.getElementById('download-section').classList.remove('active');
-            document.getElementById('theme-section').classList.remove('active');
-            document.getElementById('links-section').classList.remove('active');
-            document.getElementById('shop-section').classList.remove('active');
+function showSection(sectionId) {
+    // 1. Hide all layout sections that end with "-section"
+    document.querySelectorAll('[id$="-section"]').forEach(section => {
+        section.classList.remove('active');
+    });
 
-            // Deactivate all buttons
-            document.getElementById('btn-readme').classList.remove('active');
-            document.getElementById('btn-whatsnew').classList.remove('active');
-            document.getElementById('btn-requirements').classList.remove('active');
-            document.getElementById('btn-faq').classList.remove('active');
-            document.getElementById('btn-download').classList.remove('active');
-            document.getElementById('btn-theme').classList.remove('active');
-            document.getElementById('btn-links').classList.remove('active');
-            document.getElementById('btn-shop').classList.remove('active');
+    // 2. Deactivate all buttons that start with "btn-"
+    document.querySelectorAll('[id^="btn-"]').forEach(button => {
+        button.classList.remove('active');
+    });
 
-            // Show selected section and activate button
-            document.getElementById(sectionId + '-section').classList.add('active');
-            document.getElementById('btn-' + sectionId).classList.add('active');
-        }
+    // 3. Find the selected target container elements
+    const targetSection = document.getElementById(sectionId + '-section');
+    const targetButton = document.getElementById('btn-' + sectionId);
+
+    // 4. Safely activate them only if they exist in the HTML layout
+    if (targetSection) {
+        targetSection.classList.add('active');
+    } else {
+        console.warn('ZanyonUI Warning: Missing section element for ID "' + sectionId + '-section"');
+    }
+
+    if (targetButton) {
+        targetButton.classList.add('active');
+    } else {
+        console.warn('ZanyonUI Warning: Missing button element for ID "btn-' + sectionId + '"');
+    }
+}
 
         // FAQ Accordion Toggle
         function toggleFaq(buttonElement) {
