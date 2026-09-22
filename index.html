@@ -987,15 +987,29 @@ g)
                 </div>
             </div>
 
-                            <!-- Question 4 -->
+                            <!-- Question 5 -->
             <div class="faq-item">
                 <button class="faq-question" onclick="toggleFaq(this)">How do I compress AND encrypt a file?</button>
                 <div class="faq-answer">
-                    <p>imfpfvvf</p>
+                    <p>First, right-click your file then click Compress. Then press Next. Click on your old file and press Shift + Delete. Then, open ZanyonLocker, make a password, encrypt your new .zip file. Then, your file will have a .zip.zanyon extension. Next time, to decrypt it, right-click it and press Encrypt/Decrypt with ZanyonLocker and enter your password. Then right-click the new file and click <strong>Extract...</strong>. Your file is back to normal.</p>
                 </div>
             </div>
-<!-- as of 21/09/26, i need to continue with others here. -->
 
+                            <!-- Question 6 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">I deleted ZanyonLocker. Are my files safe or gone?</button>
+                <div class="faq-answer">
+                    <p>Your files are safe. Simply deleting the app doesn't delete your passwords or files. Even if you reinstall ZanyonLocker, you can still access or decrypt your files.</p>
+                </div>
+            </div>
+
+                            <!-- Question 7 -->
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">How do I transfer my files to a new PC?</button>
+                <div class="faq-answer">
+                    <p>To do that, gather all your encrypted files to a folder named ZanyonLocker Files. Then, right-click it and press Compress. Then click Next. Then use a cable, Bluetooth or file transfer utility and pick your ZanyonLocker Files.zip folder and transfer it to your new PC. To access it again, right-click it and click Extract then click Next. From there, you can decrypt your files.</p>
+                </div>
+            </div>
 
             <!-- No Results Message -->
             <div id="no-faq-results" style="display: none; text-align: center; padding: 20px;">
@@ -1077,46 +1091,8 @@ g)
             <p>My official GitHub to download my projects: <a href="https://github.com/RaidenCorporation" target="_blank">GitHub</a></p>
             <p>My official SourceForge to download my projects easily for people who aren't tech-savvy: <a href="https://sourceforge.net/u/raidencorp" target="_blank">SourceForge</a></p>
             <p>Download my free media from Pixabay: <a href="https://pixabay.com/users/raidencorporation-53407453" target="_blank">Pixabay</a></p>
+            <p>Download my free media from Imgur: <a href="https://imgur.com/user/RaidenCorporation" target="_blank">Imgur</a></p>
         </div>
-
-<!-- 8. SHOP SECTION -->
-
-<div id="shop-section" class="section">
-
-    <h1> Raiden Corporation Shop</h1>
-
-   <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
-
-    <!-- Card 1 -->
-    <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 15px; width: 220px; text-align: center;">
-        <div style="width: 100%; height: 130px; background: rgba(0, 0, 0, 0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; color: #888; font-size: 14px;">
-            [ Product Preview ]
-        </div>
-        <h3 style="margin: 5px 0 8px 0; font-size: 18px;">Placeholder</h3>
-        <p style="margin: 0; font-weight: bold; color: #ff3b5c; font-size: 16px;">R9</p>
-    </div>
-
-    <!-- Card 2 -->
-    <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 15px; width: 220px; text-align: center;">
-        <div style="width: 100%; height: 130px; background: rgba(0, 0, 0, 0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; color: #888; font-size: 14px;">
-            [ Product Preview ]
-        </div>
-        <h3 style="margin: 5px 0 8px 0; font-size: 18px;">Placeholder</h3>
-        <p style="margin: 0; font-weight: bold; color: #ff3b5c; font-size: 16px;">R4</p>
-    </div>
-
-    <!-- Card 3 -->
-    <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 15px; width: 220px; text-align: center;">
-        <div style="width: 100%; height: 130px; background: rgba(0, 0, 0, 0.3); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; color: #888; font-size: 14px;">
-            [ Product Preview ]
-        </div>
-        <h3 style="margin: 5px 0 8px 0; font-size: 18px;">Placeholder</h3>
-        <p style="margin: 0; font-weight: bold; color: #ff3b5c; font-size: 16px;">R12</p>
-    </div>
-
-</div>
-
-</div>
     </div>
 
     <!-- JavaScript Logic -->
@@ -1213,7 +1189,7 @@ g)
             navigator.clipboard.writeText(websiteUrl).then(function() {
                 showToast("Copied to clipboard");
             }).catch(function() {
-                showToast("Failed to copy link");
+                showToast("Failed to copy link, please try again");
             });
         }
 
@@ -1262,7 +1238,7 @@ g)
             }
         }
 
-        // Initialize Theme on Page Load
+        // Initialise Theme on Page Load
         initTheme();
     </script>
 
