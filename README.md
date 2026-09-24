@@ -87,7 +87,8 @@ To decrypt a file, open ZanyonLocker and click Decrypt a file. Enter your passwo
 
 Video Tutorial:
 
-https://github.com/user-attachments/assets/d39497f5-9f1f-44fc-a24d-f8e35849d5b2
+
+https://github.com/user-attachments/assets/87ce7059-1096-4e80-aa96-f3ba69be896e
 
 
 ![.zanyon File Extension Icon](https://i.imgur.com/Fd8QUmG.png)
@@ -162,21 +163,21 @@ ZanyonLocker will not be used for **unethical reasons**, such as hacking. Use Za
 
 # 🔗 Links
 
-**7-Zip Competition/Wiki:** https://github.com/RaidenCorporation/ZanyonLocker/wiki
+[7-Zip Competition/Wiki](https://github.com/RaidenCorporation/ZanyonLocker/wiki)
 
-**ROADMAP (Future Ideas) NOT UPDATED YET BTW:** https://github.com/RaidenCorporation/ZanyonLocker/blob/main/ROADMAP.md
+[Roadmap (Future ideas) NOT UPDATED YET BTW](https://github.com/RaidenCorporation/ZanyonLocker/blob/main/ROADMAP.md)
 
-**SourceForge Version:** https://sourceforge.net/p/zanyonlocker
+[SourceForge version](https://sourceforge.net/p/zanyonlocker)
 
-**ZanyonLocker Code · Malware-free Proof:** https://github.com/RaidenCorporation/ZanyonLocker/blob/main/zl-code-safety-proof.txt
+[ZanyonLocker code · Malware-free proof](https://github.com/RaidenCorporation/ZanyonLocker/blob/main/zl-code-safety-proof.txt)
 
-**Other Projects · Profile:** https://github.com/RaidenCorporation
+[Other projects · Profile](https://github.com/RaidenCorporation)
 
-**YouTube Videos & Tutorials:** https://youtube.com/@RaidenCorporation
+[YouTube videos & tutorials](https://youtube.com/@RaidenCorporation)
 
-**ZanyonLocker Website:**
-https://raidencorporation.github.io/ZanyonLocker
+[ZanyonLocker official website](https://raidencorporation.github.io/ZanyonLocker)
 
+[Download encrypted sample `.zanyon` files and decrypt them](https://github.com/RaidenCorporation/ZanyonLocker/blob/main/SAMPLES.md)
  
 
 *Project Created By:* Raiden Corporation
